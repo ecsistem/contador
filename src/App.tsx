@@ -1,89 +1,18 @@
-import { Calculator, ChartBar, Users, Building2, ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { CheckCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Hero } from '@/components/hero';
+import { Nav } from '@/components/nav';
+import { Services } from './components/services';
+import { Partners } from './components/partners';
 
 export function App() {
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <nav className="container mx-auto p-4 flex justify-between items-center border-b">
-        <h1 className="text-2xl font-bold text-gray-900">ContaMax</h1>
-        <div className="flex gap-6">
-          <Button variant="ghost" className="text-gray-600 hover:text-gray-900">Serviços</Button>
-          <Button variant="ghost" className="text-gray-600 hover:text-gray-900">Sobre</Button>
-          <Button variant="ghost" className="text-gray-600 hover:text-gray-900">Contato</Button>
-          <Button className="bg-pink-500 text-white hover:bg-pink-600">
-            Agendar Consulta
-          </Button>
-        </div>
-      </nav>
-
-      <section className="container mx-auto px-4 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-          <h2 className="text-5xl font-bold leading-tight text-gray-900 animate-fade-up">
-            Contabilidade Inteligente para seu Negócio
-          </h2>
-          <p className="text-gray-600 text-lg">
-            Junte-se a mais de 500 empresas que já economizaram milhões em impostos com nossa consultoria especializada.
-          </p>
-          <Button size="lg" className="bg-pink-500 text-white hover:bg-pink-600 group">
-            Começar Agora
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
-        <div className="relative">
-          <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/20 to-pink-600/10 rounded-lg blur-lg"></div>
-          <Card className="relative bg-white shadow-xl p-8 border border-gray-100">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-4">
-                <h3 className="text-4xl font-bold text-gray-900">500+</h3>
-                <p className="text-gray-600">Clientes Ativos</p>
-              </div>
-              <div className="text-center p-4">
-                <h3 className="text-4xl font-bold text-gray-900">98%</h3>
-                <p className="text-gray-600">Satisfação</p>
-              </div>
-              <div className="text-center p-4">
-                <h3 className="text-4xl font-bold text-gray-900">15M+</h3>
-                <p className="text-gray-600">Economizados</p>
-              </div>
-              <div className="text-center p-4">
-                <h3 className="text-4xl font-bold text-gray-900">10+</h3>
-                <p className="text-gray-600">Anos de Experiência</p>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Nossos Serviços</h2>
-          <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent>
-              {services.map((service, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-2">
-                  <Card className="bg-white border-gray-100 p-6 h-full hover:shadow-lg transition-shadow">
-                    <service.icon className="h-12 w-12 mb-4 text-pink-500" />
-                    <h3 className="text-xl font-semibold mb-2 text-gray-900">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
-      </section>
+    <div className="bg-[#f8fafc]">
+      <Nav />
+      <Hero />
+      <Partners />
+      <Services />
 
       {/* Features Section */}
       <section className="container mx-auto px-4 py-20">
@@ -136,7 +65,7 @@ export function App() {
               </div>
               <div className="flex items-center space-x-4">
                 <Mail className="h-5 w-5 text-pink-500" />
-                <p className="text-gray-600">contato@contamax.com.br</p>
+                <p className="text-gray-600">contato@Comtato.com.br</p>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPin className="h-5 w-5 text-pink-500" />
@@ -158,11 +87,11 @@ export function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 border-t border-gray-100">
+      <footer className="bg-white border-t border-gray-100">
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-gray-900">ContaMax</h3>
+              <h3 className="text-lg font-semibold mb-4 text-gray-900">Comtato</h3>
               <p className="text-gray-600">Sua contabilidade inteligente</p>
             </div>
             <div>
@@ -194,7 +123,7 @@ export function App() {
           </div>
           <div className="mt-8 pt-8 border-t border-gray-200">
             <p className="text-center text-gray-600">
-              © 2024 ContaMax. Todos os direitos reservados.
+              © 2024 Comtato. Todos os direitos reservados.
             </p>
           </div>
         </div>
@@ -203,28 +132,7 @@ export function App() {
   );
 }
 
-const services = [
-  {
-    title: "Consultoria Fiscal",
-    description: "Estratégias inteligentes para minimizar sua carga tributária legalmente.",
-    icon: Calculator
-  },
-  {
-    title: "Análise Financeira",
-    description: "Relatórios detalhados e insights para tomada de decisões.",
-    icon: ChartBar
-  },
-  {
-    title: "Gestão de Folha",
-    description: "Administração completa de funcionários e encargos.",
-    icon: Users
-  },
-  {
-    title: "Abertura de Empresa",
-    description: "Suporte completo para iniciar seu negócio.",
-    icon: Building2
-  }
-];
+
 
 const features = [
   {
@@ -257,7 +165,7 @@ const testimonials = [
   {
     name: "Ana Silva",
     company: "Tech Solutions",
-    text: "A ContaMax transformou nossa gestão fiscal. Economizamos mais de 30% em impostos no primeiro ano."
+    text: "A Comtato transformou nossa gestão fiscal. Economizamos mais de 30% em impostos no primeiro ano."
   },
   {
     name: "Carlos Santos",
@@ -267,6 +175,6 @@ const testimonials = [
   {
     name: "Marina Costa",
     company: "Startup Innovation",
-    text: "A melhor decisão que tomamos foi contratar a ContaMax. Nossos processos contábeis nunca foram tão eficientes."
+    text: "A melhor decisão que tomamos foi contratar a Comtato. Nossos processos contábeis nunca foram tão eficientes."
   }
 ];
