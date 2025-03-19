@@ -14,6 +14,46 @@ export function App() {
       <Partners />
       <Services />
 
+      {/* Benefits Section */}
+      <section id="benefits" className="container mx-auto px-4 py-20 bg-gradient-to-b from-pink-50 to-[#f8fafc]">
+          <div className="container">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <img
+                  src="/placeholder.svg?height=500&width=500"
+                  alt="Benefícios da Contabilidade Moderna"
+                  width={500}
+                  height={500}
+                  className="rounded-xl shadow-lg"
+                />
+              </div>
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold">Por que escolher nossa contabilidade?</h2>
+                <p className="text-muted-foreground">
+                  Nossa abordagem moderna combina tecnologia avançada com atendimento personalizado para oferecer o
+                  melhor serviço contábil para sua empresa.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    "Atendimento personalizado e ágil",
+                    "Plataforma digital para acesso 24/7",
+                    "Equipe especializada e atualizada",
+                    "Redução de custos operacionais",
+                    "Segurança e conformidade fiscal",
+                    "Relatórios gerenciais detalhados",
+                  ].map((benefit, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-pink-500 mt-0.5 flex-shrink-0" />
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+                <Button className="bg-pink-500 hover:bg-pink-600 text-white mt-4">Conheça Todos os Benefícios</Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
       {/* Features Section */}
       <section className="container mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Por que nos escolher?</h2>
@@ -51,6 +91,107 @@ export function App() {
           </div>
         </div>
       </section>
+       {/* Pricing Section */}
+       <section id="pricing" className="py-20 bg-gradient-to-b from-pink-50 to-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl font-bold mb-4">Planos que se adaptam ao seu negócio</h2>
+              <p className="text-muted-foreground">
+                Escolha o plano ideal para sua empresa e comece a transformar sua contabilidade hoje mesmo.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Essencial",
+                  price: "R$ 499",
+                  description: "Ideal para MEIs e pequenos negócios",
+                  features: [
+                    "Contabilidade fiscal básica",
+                    "Declarações obrigatórias",
+                    "Folha de pagamento (até 3 funcionários)",
+                    "Acesso à plataforma digital",
+                    "Suporte por e-mail",
+                  ],
+                  highlighted: false,
+                },
+                {
+                  name: "Empresarial",
+                  price: "R$ 899",
+                  description: "Perfeito para empresas em crescimento",
+                  features: [
+                    "Contabilidade fiscal completa",
+                    "Todas as declarações obrigatórias",
+                    "Folha de pagamento (até 10 funcionários)",
+                    "Consultoria mensal",
+                    "Relatórios gerenciais",
+                    "Planejamento tributário básico",
+                    "Suporte prioritário",
+                  ],
+                  highlighted: true,
+                },
+                {
+                  name: "Premium",
+                  price: "R$ 1.499",
+                  description: "Para empresas que buscam excelência",
+                  features: [
+                    "Contabilidade fiscal e gerencial",
+                    "Todas as declarações obrigatórias",
+                    "Folha de pagamento ilimitada",
+                    "Consultoria semanal",
+                    "Relatórios gerenciais avançados",
+                    "Planejamento tributário completo",
+                    "Suporte 24/7",
+                    "Consultor dedicado",
+                  ],
+                  highlighted: false,
+                },
+              ].map((plan, index) => (
+                <div
+                  key={index}
+                  className={`rounded-xl p-6 border ${
+                    plan.highlighted ? "border-pink-300 bg-white shadow-lg relative" : "border-pink-100 bg-white/80"
+                  }`}
+                >
+                  {plan.highlighted && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pink-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                      Mais Popular
+                    </div>
+                  )}
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                    <div className="flex items-end justify-center gap-1 mb-2">
+                      <span className="text-3xl font-bold">{plan.price}</span>
+                      <span className="text-muted-foreground">/mês</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{plan.description}</p>
+                  </div>
+                  <div className="space-y-3 mb-6">
+                    {plan.features.map((feature, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <CheckCircle className="h-5 w-5 text-pink-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <Button
+                    className={`w-full ${
+                      plan.highlighted
+                        ? "bg-pink-500 hover:bg-pink-600 text-white"
+                        : "bg-white hover:bg-pink-50 text-pink-500 border border-pink-200"
+                    }`}
+                  >
+                    Contratar Agora
+                  </Button>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-8 text-sm text-muted-foreground">
+              Todos os planos incluem suporte e acesso à plataforma digital. Consulte condições específicas para seu
+              segmento.
+            </div>
+          </div>
+        </section>
 
       {/* Contact Section */}
       <section className="container mx-auto px-4 py-20">
@@ -125,7 +266,7 @@ export function App() {
           </div>
           <div className="mt-8 pt-8 border-t border-gray-200">
             <p className="text-center text-gray-600">
-              © 2024 Comtato. Todos os direitos reservados.
+              © 2025 Comtato. Todos os direitos reservados.
             </p>
           </div>
         </div>
