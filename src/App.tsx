@@ -19,8 +19,10 @@ export function App() {
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Por que nos escolher?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-start space-x-4 p-6 rounded-lg hover:bg-gray-50 transition-colors">
+            <div key={index} className="flex items-start space-x-4 p-6 rounded-lg bg-white hover:bg-gray-50 transition-colors">
+              <div className='flex items-center justify-center w-12 h-12 min-w-12 max-w-12pnp bg-pink-100 rounded-full'>
               <CheckCircle className="h-6 w-6 text-pink-500 flex-shrink-0" />
+              </div>
               <div>
                 <h3 className="text-lg font-semibold mb-2 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -61,19 +63,19 @@ export function App() {
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <Phone className="h-5 w-5 text-pink-500" />
-                <p className="text-gray-600">(11) 9999-9999</p>
+                <p className="text-gray-600">(61) 99633-3545 / (91) 99114-4551</p>
               </div>
               <div className="flex items-center space-x-4">
                 <Mail className="h-5 w-5 text-pink-500" />
-                <p className="text-gray-600">contato@Comtato.com.br</p>
+                <p className="text-gray-600">atendimento@comtatocontabilidade.com.br</p>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPin className="h-5 w-5 text-pink-500" />
-                <p className="text-gray-600">São Paulo, SP</p>
+                <p className="text-gray-600">Belém, PA</p>
               </div>
               <div className="flex items-center space-x-4">
                 <Clock className="h-5 w-5 text-pink-500" />
-                <p className="text-gray-600">Seg - Sex: 9:00 - 18:00</p>
+                <p className="text-gray-600">Segunda a sexta-Feira: 08h - 18h<br />Sábados: 08h - 12h</p>
               </div>
             </div>
           </div>

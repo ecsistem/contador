@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+// import { Card } from "@/components/ui/card";
 
 export function Hero() {
   return (
@@ -34,32 +34,32 @@ export function Hero() {
       </div>
 
       {/* Results section - Bottom */}
-      <div className="container mx-auto px-6 pb-12 z-10">
+      {/* <div className="container mx-auto px-6 pb-12 z-10">
         <div className="relative mx-auto max-w-5xl mt-8 mb-4">
           <div className="absolute -inset-2 bg-gradient-to-r from-pink-500/20 to-purple-600/20 rounded-2xl blur-xl"></div>
           <Card className="relative bg-white/80 backdrop-blur-sm shadow-2xl p-8 border border-gray-100/50 rounded-2xl">
             <h3 className="text-2xl font-semibold mb-8 text-center text-gray-800">Resultados Comprovados</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center p-4 transform hover:scale-105 transition-transform">
-                <h3 className="text-5xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text">500+</h3>
+                <h3 className="text-5xl font-bold text-pink-500 bg-clip-text">500+</h3>
                 <p className="text-gray-600 mt-2 font-medium">Clientes Ativos</p>
               </div>
               <div className="text-center p-4 transform hover:scale-105 transition-transform">
-                <h3 className="text-5xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text">98%</h3>
+                <h3 className="text-5xl font-bold text-pink-500 bg-clip-text">98%</h3>
                 <p className="text-gray-600 mt-2 font-medium">Satisfação</p>
               </div>
               <div className="text-center p-4 transform hover:scale-105 transition-transform">
-                <h3 className="text-5xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text">15M+</h3>
+                <h3 className="text-5xl font-bold text-pink-500 bg-clip-text">15M+</h3>
                 <p className="text-gray-600 mt-2 font-medium">Economizados</p>
               </div>
               <div className="text-center p-4 transform hover:scale-105 transition-transform">
-                <h3 className="text-5xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text">10+</h3>
+                <h3 className="text-5xl font-bold text-pink-500 bg-clip-text">10+</h3>
                 <p className="text-gray-600 mt-2 font-medium">Anos de Experiência</p>
               </div>
             </div>
           </Card>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
