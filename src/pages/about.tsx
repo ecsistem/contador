@@ -151,70 +151,72 @@ export function AboutUs() {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
-                Nossa Equipe
-              </div>
-              <h2 className="text-3xl font-bold mb-4">Conheça os Especialistas</h2>
-              <p className="text-muted-foreground">
-                Nossa equipe é formada por profissionais apaixonados por contabilidade e tecnologia, comprometidos em
-                oferecer o melhor serviço para nossos clientes.
-              </p>
-            </div>
+<section className="py-16 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="text-center max-w-3xl mx-auto mb-16">
+      <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
+        Nossa Equipe
+      </div>
+      <h2 className="text-3xl font-bold mb-4">Conheça os Especialistas</h2>
+      <p className="text-muted-foreground">
+        Nossa equipe é formada por profissionais apaixonados por contabilidade e tecnologia, comprometidos em
+        oferecer o melhor serviço para nossos clientes.
+      </p>
+    </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Raphael Tavares",
-                  role: "CEO & Especialista Tributário",
-                  bio: "Contador com mais de 20 anos de experiência, especialista em gestão estratégica e inovação em serviços contábeis.",
-                  education: "Mestrado em Contabilidade pela UFPA",
-                  image: Rapha,
-                },
-              ].map((member, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl border border-pink-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
-                >
-                  <div className="relative">
-                    <img
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      width={400}
-                      height={400}
-                      className="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                      <div className="text-white">
-                        <p className="font-medium mb-2">{member.bio}</p>
-                        <div className="flex items-center gap-2">
-                          <GraduationCap className="h-4 w-4" />
-                          <span className="text-sm">{member.education}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold">{member.name}</h3>
-                    <p className="text-pink-500 font-medium mb-4">{member.role}</p>
-                    <a
-                      href="#"
-                      className="inline-flex items-center text-sm font-medium text-pink-500 hover:underline"
-                    >
-                      Ver perfil completo <ArrowRight className="ml-1 h-4 w-4" />
-                    </a>
+    <div className="flex justify-center">
+      <div className="max-w-md">
+        {[
+          {
+            name: "Raphael Tavares",
+            role: "CEO & Especialista Tributário",
+            bio: "Contador com mais de 20 anos de experiência, especialista em gestão estratégica e inovação em serviços contábeis.",
+            education: "Mestrado em Contabilidade pela UFPA",
+            image: Rapha,
+          },
+        ].map((member, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-xl border border-pink-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
+          >
+            <div className="relative">
+              <img
+                src={member.image || "/placeholder.svg"}
+                alt={member.name}
+                width={400}
+                height={400}
+                className="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                <div className="text-white">
+                  <p className="font-medium mb-2">{member.bio}</p>
+                  <div className="flex items-center gap-2">
+                    <GraduationCap className="h-4 w-4" />
+                    <span className="text-sm">{member.education}</span>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-
-            <div className="text-center mt-12">
-              <Button className="bg-pink-500 hover:bg-pink-600 text-white">Conheça Toda a Equipe</Button>
+            <div className="p-6">
+              <h3 className="text-xl font-bold">{member.name}</h3>
+              <p className="text-pink-500 font-medium mb-4">{member.role}</p>
+              <a
+                href="#"
+                className="inline-flex items-center text-sm font-medium text-pink-500 hover:underline"
+              >
+                Ver perfil completo <ArrowRight className="ml-1 h-4 w-4" />
+              </a>
             </div>
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+
+    <div className="text-center mt-12">
+      <Button className="bg-pink-500 hover:bg-pink-600 text-white">Conheça Toda a Equipe</Button>
+    </div>
+  </div>
+</section>
 
         {/* Timeline Section */}
         <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
