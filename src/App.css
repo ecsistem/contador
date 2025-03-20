@@ -4,10 +4,3 @@
   padding: 2rem;
   text-align: center;
 }
-a.active {
-  color: red;
-}
-
-a.pending {
-  animation: pulse 1s infinite;
-}
