@@ -16,7 +16,7 @@ export function AppRoutes() {
           <Route path="sobre-nos" element={<AboutUs />} />
           <Route path="servicos" element={<ServicesPage />} />
           <Route path="abrir-empresa" element={<AberturaDaEmpresaPage />} />
-          <Route path="contato" element={<ContactPage />} />
+          <Route path="contatos" element={<ContactPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
