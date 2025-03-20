@@ -44,7 +44,7 @@ export function Footer() {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-center text-gray-600">
-            © 2025 Comtato. Todos os direitos reservados.
+          © {new Date().getFullYear()} Comtato. Todos os direitos reservados.
           </p>
         </div>
       </div>

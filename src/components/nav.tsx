@@ -33,13 +33,18 @@ export function Nav() {
             <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/" end>
               Início
             </NavLink>
-            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/#servico" end>
+            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/servicos" end>
             Serviços
             </NavLink>
             <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/sobre-nos" end>
             Sobre
             </NavLink>
-            <Button variant="ghost" className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium">Contato</Button>
+            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/abrir-empresa" end>
+            Abrir empresa
+            </NavLink>
+            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/contatos" end>
+            Contatos
+            </NavLink>
             <Button className="bg-pink-500 text-white hover:bg-pink-600 shadow-md transition-all duration-300 hover:shadow-lg rounded-full px-6">
               Agendar Consulta
             </Button>

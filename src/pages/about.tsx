@@ -14,6 +14,7 @@ import {
   TrendingUp,
   MapPin,
 } from "lucide-react"
+import Rapha from "/images/rapha.jpeg"
 
 export function AboutUs() {
   return (
@@ -168,11 +169,11 @@ export function AboutUs() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Maria Silva",
+                  name: "Raphael Tavares",
                   role: "CEO & Especialista Tributário",
                   bio: "Contador com mais de 20 anos de experiência, especialista em gestão estratégica e inovação em serviços contábeis.",
                   education: "Mestrado em Contabilidade pela UFPA",
-                  image: "/placeholder.svg?height=400&width=400",
+                  image: Rapha,
                 },
               ].map((member, index) => (
                 <div

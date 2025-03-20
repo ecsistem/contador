@@ -20,11 +20,11 @@ export function Home() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-2 md:order-1">
               <img
-                src="/placeholder.svg?height=500&width=500"
+                src="/images/logo.svg"
                 alt="Benefícios da Contabilidade Moderna"
                 width={500}
                 height={500}
-                className="rounded-xl shadow-lg w-full"
+                // className="rounded-xl shadow-lg w-full"
               />
             </div>
             <div className="space-y-4 md:space-y-6 order-1 md:order-2">
