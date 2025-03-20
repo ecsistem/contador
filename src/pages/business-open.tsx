@@ -369,7 +369,7 @@ export default function AberturaDaEmpresaPage() {
 
         {/* Process Section */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+        <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Processo Simplificado
@@ -429,7 +429,7 @@ export default function AberturaDaEmpresaPage() {
 
         {/* Business Types Section */}
         <section id="business-types" className="py-16 bg-gradient-to-b from-pink-50 to-white">
-          <div className="container px-4">
+        <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Tipos de Empresa
@@ -516,7 +516,7 @@ export default function AberturaDaEmpresaPage() {
 
         {/* Form Section */}
         <section id="form-section" className="py-16 bg-white">
-          <div className="container px-4">
+        <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Formulário de Abertura
@@ -808,7 +808,7 @@ export default function AberturaDaEmpresaPage() {
 
         {/* FAQ Section */}
         <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
-          <div className="container px-4">
+        <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Dúvidas Frequentes
@@ -869,32 +869,6 @@ export default function AberturaDaEmpresaPage() {
                 <p className="text-muted-foreground mb-4">Não encontrou o que procurava? Entre em contato conosco.</p>
                 <Button className="bg-pink-500 hover:bg-pink-600 text-white">Fale com um Especialista</Button>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-12 bg-pink-500 text-white">
-          <div className="container px-4">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h2 className="text-2xl font-bold mb-2">Pronto para iniciar seu negócio?</h2>
-                <p className="text-pink-100">
-                  Preencha o formulário e comece hoje mesmo o processo de abertura da sua empresa.
-                </p>
-              </div>
-              <Button
-                size="lg"
-                className="bg-white text-pink-500 hover:bg-pink-50"
-                onClick={() => {
-                  const element = document.getElementById("form-section")
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth" })
-                  }
-                }}
-              >
-                Iniciar Abertura
-              </Button>
             </div>
           </div>
         </section>

@@ -24,7 +24,7 @@ export function AboutUs() {
         {/* Hero Section */}
         <section className="relative py-20">
           <div className="absolute inset-0 bg-gradient-to-r from-pink-50 to-pink-100 -z-10" />
-          <div className="container text-center max-w-4xl mx-auto px-4">
+          <div className="container mx-auto px-4 text-center max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Conheça a <span className="text-pink-500">COMTATO</span>
             </h1>
@@ -45,11 +45,9 @@ export function AboutUs() {
 
         {/* Our Story Section */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative">
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-pink-200 rounded-full -z-10" />
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-pink-300 rounded-full -z-10" />
                 <img
                   src="/placeholder.svg?height=600&width=600"
                   alt="Nossa História"
@@ -86,7 +84,7 @@ export function AboutUs() {
 
         {/* Mission, Vision, Values Section */}
         <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Nossa Essência
@@ -154,7 +152,7 @@ export function AboutUs() {
 
         {/* Team Section */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Nossa Equipe
@@ -220,7 +218,7 @@ export function AboutUs() {
 
         {/* Timeline Section */}
         <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Nossa Trajetória
@@ -318,7 +316,7 @@ export function AboutUs() {
 
         {/* Office Section */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Nossos Espaços
@@ -365,7 +363,7 @@ export function AboutUs() {
 
         {/* Stats Section */}
         <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 {
@@ -403,7 +401,7 @@ export function AboutUs() {
 
         {/* Testimonials Section */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Depoimentos
@@ -482,7 +480,7 @@ export function AboutUs() {
 
         {/* Partners Section */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Parceiros
@@ -513,4 +511,3 @@ export function AboutUs() {
     </div>
   )
 }
-

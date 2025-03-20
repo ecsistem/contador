@@ -376,7 +376,7 @@ export function ServicesPage() {
 
         {/* Services Overview Section */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Visão Geral
@@ -413,7 +413,7 @@ export function ServicesPage() {
 
         {/* Detailed Services Section */}
         <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Detalhamento
@@ -478,7 +478,7 @@ export function ServicesPage() {
 
         {/* Additional Services Section */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Serviços Adicionais
@@ -526,7 +526,7 @@ export function ServicesPage() {
 
         {/* Industries Section */}
         <section className="py-16 bg-gradient-to-b from-white to-pink-50">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Setores de Atuação
@@ -571,7 +571,7 @@ export function ServicesPage() {
 
         {/* FAQ Section */}
         <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Dúvidas Frequentes
@@ -607,7 +607,7 @@ export function ServicesPage() {
 
         {/* Testimonials Section */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Depoimentos
