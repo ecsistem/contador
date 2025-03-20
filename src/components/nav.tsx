@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { NavLink } from "react-router";
 
 export function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,9 +10,11 @@ export function Nav() {
     <div className="flex justify-center w-full pt-6">
       <nav className="container rounded-xl backdrop-blur-md bg-white/80 shadow-lg border border-white/30 overflow-hidden">
         <div className="p-4 flex justify-between items-center">
-          <div className="flex items-center">
-            <img src="/images/logo.png" alt="Logo" width={160} height={80} className="h-10 w-auto" />
-          </div>
+            <div className="flex items-center">
+            <NavLink to="/" end>
+              <img src="/images/logo.png" alt="Logo" width={160} height={80} className="h-10 w-auto" />
+            </NavLink>
+            </div>
           
           {/* Mobile menu button */}
           <button 
@@ -27,8 +30,15 @@ export function Nav() {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-5">
-            <Button variant="ghost" className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium">Serviços</Button>
-            <Button variant="ghost" className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium">Sobre</Button>
+            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/" end>
+              Início
+            </NavLink>
+            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/#servico" end>
+            Serviços
+            </NavLink>
+            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/sobre-nos" end>
+            Sobre
+            </NavLink>
             <Button variant="ghost" className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium">Contato</Button>
             <Button className="bg-pink-500 text-white hover:bg-pink-600 shadow-md transition-all duration-300 hover:shadow-lg rounded-full px-6">
               Agendar Consulta

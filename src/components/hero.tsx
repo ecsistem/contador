@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-br from-transparent to-pink-50">
+    <section className="relative py-24 md:py-48 min-h-96 flex flex-col overflow-hidden bg-gradient-to-br from-transparent to-pink-50">
       {/* Background decorative elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 right-20 w-72 h-72 bg-pink-200/20 rounded-full blur-3xl" />
