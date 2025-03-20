@@ -24,7 +24,6 @@ export function Home() {
                 alt="Benefícios da Contabilidade Moderna"
                 width={500}
                 height={500}
-                // className="rounded-xl shadow-lg w-full"
               />
             </div>
             <div className="space-y-4 md:space-y-6 order-1 md:order-2">

@@ -5,7 +5,6 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -24,13 +23,29 @@ export default function AberturaDaEmpresaPage() {
     rg: "",
     voterID: "",
     govPassword: "",
-    residentialAddress: "",
-    businessActivities: "",
-    businessAddress: "",
-    businessName: "",
-    email: "",
+     // Endereço residencial detalhado
+     residentialCep: "",
+     residentialStreet: "",
+     residentialNumber: "",
+     residentialComplement: "",
+     residentialNeighborhood: "",
+     residentialCity: "",
+     residentialState: "",
+     // Endereço da empresa detalhado
+     businessCep: "",
+     businessStreet: "",
+     businessNumber: "",
+     businessComplement: "",
+     businessNeighborhood: "",
+     businessCity: "",
+     businessState: "",
+     businessActivities: "",
+     businessName: "",
+     email: "",
     phone: "",
   })
+
+  const [sameAddress, setSameAddress] = useState(false)
 
   // Error state
   const [errors, setErrors] = useState<Record<string, string>>({})
@@ -121,16 +136,58 @@ export default function AberturaDaEmpresaPage() {
       newErrors.govPassword = "Senha do GOV.BR é obrigatória"
     }
 
-    if (!formData.residentialAddress.trim()) {
-      newErrors.residentialAddress = "Endereço residencial é obrigatório"
+    // Validação do endereço residencial
+    if (!formData.residentialCep.trim()) {
+      newErrors.residentialCep = "CEP é obrigatório"
+    }
+
+    if (!formData.residentialStreet.trim()) {
+      newErrors.residentialStreet = "Rua é obrigatória"
+    }
+
+    if (!formData.residentialNumber.trim()) {
+      newErrors.residentialNumber = "Número é obrigatório"
+    }
+
+    if (!formData.residentialNeighborhood.trim()) {
+      newErrors.residentialNeighborhood = "Bairro é obrigatório"
+    }
+
+    if (!formData.residentialCity.trim()) {
+      newErrors.residentialCity = "Cidade é obrigatória"
+    }
+
+    if (!formData.residentialState.trim()) {
+      newErrors.residentialState = "Estado é obrigatório"
     }
 
     if (!formData.businessActivities.trim()) {
       newErrors.businessActivities = "Atividades comerciais são obrigatórias"
     }
 
-    if (!formData.businessAddress.trim()) {
-      newErrors.businessAddress = "Endereço da empresa é obrigatório"
+    // Validação do endereço da empresa
+    if (!formData.businessCep.trim()) {
+      newErrors.businessCep = "CEP é obrigatório"
+    }
+
+    if (!formData.businessStreet.trim()) {
+      newErrors.businessStreet = "Rua é obrigatória"
+    }
+
+    if (!formData.businessNumber.trim()) {
+      newErrors.businessNumber = "Número é obrigatório"
+    }
+
+    if (!formData.businessNeighborhood.trim()) {
+      newErrors.businessNeighborhood = "Bairro é obrigatório"
+    }
+
+    if (!formData.businessCity.trim()) {
+      newErrors.businessCity = "Cidade é obrigatória"
+    }
+
+    if (!formData.businessState.trim()) {
+      newErrors.businessState = "Estado é obrigatório"
     }
 
     if (!formData.businessName.trim()) {
@@ -159,9 +216,27 @@ export default function AberturaDaEmpresaPage() {
 *RG:* ${formData.rg}
 *Título de eleitor:* ${formData.voterID}
 *Senha do aplicativo GOV.BR:* ${formData.govPassword}
-*Endereço completo de Residência:* ${formData.residentialAddress}
+
+*Endereço Residencial:*
+CEP: ${formData.residentialCep}
+Rua: ${formData.residentialStreet}
+Número: ${formData.residentialNumber}
+Complemento: ${formData.residentialComplement}
+Bairro: ${formData.residentialNeighborhood}
+Cidade: ${formData.residentialCity}
+Estado: ${formData.residentialState}
+
 *Atividades Comerciais:* ${formData.businessActivities}
-*Endereço Completo da Empresa:* ${formData.businessAddress}
+
+*Endereço da Empresa:*
+CEP: ${formData.businessCep}
+Rua: ${formData.businessStreet}
+Número: ${formData.businessNumber}
+Complemento: ${formData.businessComplement}
+Bairro: ${formData.businessNeighborhood}
+Cidade: ${formData.businessCity}
+Estado: ${formData.businessState}
+
 *Nome de Fantasia:* ${formData.businessName}
 *E-mail:* ${formData.email}
 *Telefone:* ${formData.phone}`
@@ -529,7 +604,7 @@ export default function AberturaDaEmpresaPage() {
             </div>
 
             <div className="max-w-3xl mx-auto">
-              <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-8">
                 <Card>
                   <CardHeader>
                     <CardTitle>Tipo de Empresa</CardTitle>
@@ -656,80 +731,260 @@ export default function AberturaDaEmpresaPage() {
 
                     <div className="space-y-2">
                       <Label htmlFor="residentialAddress">
-                        Endereço completo de Residência <span className="text-red-500">*</span>
+                        Endereço de Residência <span className="text-red-500">*</span>
                       </Label>
-                      <Textarea
-                        id="residentialAddress"
-                        name="residentialAddress"
-                        placeholder="Rua, número, complemento, bairro, cidade, estado, CEP"
-                        value={formData.residentialAddress}
-                        onChange={handleChange}
-                        className={errors.residentialAddress ? "border-red-500" : ""}
-                      />
-                      {errors.residentialAddress && <p className="text-red-500 text-sm">{errors.residentialAddress}</p>}
-                    </div>
-                  </CardContent>
-                </Card>
 
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Dados da Empresa</CardTitle>
-                    <CardDescription>Informações sobre o negócio que deseja abrir</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="businessName">
-                        Nome de Fantasia <span className="text-red-500">*</span>
-                      </Label>
-                      <Input
-                        id="businessName"
-                        name="businessName"
-                        placeholder="Digite o nome fantasia da empresa"
-                        value={formData.businessName}
-                        onChange={handleChange}
-                        className={errors.businessName ? "border-red-500" : ""}
-                      />
-                      {errors.businessName && <p className="text-red-500 text-sm">{errors.businessName}</p>}
-                    </div>
+                      <div className="grid grid-cols-2 gap-4 mb-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="residentialCep">
+                            CEP <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="residentialCep"
+                            name="residentialCep"
+                            placeholder="00000-000"
+                            value={formData.residentialCep}
+                            onChange={handleChange}
+                            className={errors.residentialCep ? "border-red-500" : ""}
+                          />
+                          {errors.residentialCep && <p className="text-red-500 text-sm">{errors.residentialCep}</p>}
+                        </div>
+                      </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="businessActivities">
-                        Atividades Comerciais <span className="text-red-500">*</span>
-                      </Label>
-                      <Textarea
-                        id="businessActivities"
-                        name="businessActivities"
-                        placeholder="Descreva as atividades que sua empresa irá realizar"
-                        value={formData.businessActivities}
-                        onChange={handleChange}
-                        className={errors.businessActivities ? "border-red-500" : ""}
-                      />
-                      {errors.businessActivities && <p className="text-red-500 text-sm">{errors.businessActivities}</p>}
+                      <div className="grid grid-cols-3 gap-4 mb-2">
+                        <div className="col-span-2 space-y-2">
+                          <Label htmlFor="residentialStreet">
+                            Rua/Avenida <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="residentialStreet"
+                            name="residentialStreet"
+                            placeholder="Nome da rua"
+                            value={formData.residentialStreet}
+                            onChange={handleChange}
+                            className={errors.residentialStreet ? "border-red-500" : ""}
+                          />
+                          {errors.residentialStreet && (
+                            <p className="text-red-500 text-sm">{errors.residentialStreet}</p>
+                          )}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="residentialNumber">
+                            Número <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="residentialNumber"
+                            name="residentialNumber"
+                            placeholder="Nº"
+                            value={formData.residentialNumber}
+                            onChange={handleChange}
+                            className={errors.residentialNumber ? "border-red-500" : ""}
+                          />
+                          {errors.residentialNumber && (
+                            <p className="text-red-500 text-sm">{errors.residentialNumber}</p>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-4 mb-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="residentialComplement">Complemento</Label>
+                          <Input
+                            id="residentialComplement"
+                            name="residentialComplement"
+                            placeholder="Apto, Bloco, etc."
+                            value={formData.residentialComplement}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="residentialNeighborhood">
+                            Bairro <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="residentialNeighborhood"
+                            name="residentialNeighborhood"
+                            placeholder="Bairro"
+                            value={formData.residentialNeighborhood}
+                            onChange={handleChange}
+                            className={errors.residentialNeighborhood ? "border-red-500" : ""}
+                          />
+                          {errors.residentialNeighborhood && (
+                            <p className="text-red-500 text-sm">{errors.residentialNeighborhood}</p>
+                          )}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="residentialCity">
+                            Cidade <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="residentialCity"
+                            name="residentialCity"
+                            placeholder="Cidade"
+                            value={formData.residentialCity}
+                            onChange={handleChange}
+                            className={errors.residentialCity ? "border-red-500" : ""}
+                          />
+                          {errors.residentialCity && <p className="text-red-500 text-sm">{errors.residentialCity}</p>}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="residentialState">
+                            Estado <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="residentialState"
+                            name="residentialState"
+                            placeholder="UF"
+                            value={formData.residentialState}
+                            onChange={handleChange}
+                            className={errors.residentialState ? "border-red-500" : ""}
+                          />
+                          {errors.residentialState && <p className="text-red-500 text-sm">{errors.residentialState}</p>}
+                        </div>
+                      </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="businessAddress">
-                        Endereço Completo da Empresa <span className="text-red-500">*</span>
+                        Endereço da Empresa <span className="text-red-500">*</span>
                       </Label>
-                      <Textarea
-                        id="businessAddress"
-                        name="businessAddress"
-                        placeholder="Rua, número, complemento, bairro, cidade, estado, CEP"
-                        value={formData.businessAddress}
-                        onChange={handleChange}
-                        className={errors.businessAddress ? "border-red-500" : ""}
-                      />
-                      {errors.businessAddress && <p className="text-red-500 text-sm">{errors.businessAddress}</p>}
+
+                      <div className="grid grid-cols-2 gap-4 mb-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="businessCep">
+                            CEP <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="businessCep"
+                            name="businessCep"
+                            placeholder="00000-000"
+                            value={formData.businessCep}
+                            onChange={handleChange}
+                            className={errors.businessCep ? "border-red-500" : ""}
+                            disabled={sameAddress}
+                          />
+                          {errors.businessCep && <p className="text-red-500 text-sm">{errors.businessCep}</p>}
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-4 mb-2">
+                        <div className="col-span-2 space-y-2">
+                          <Label htmlFor="businessStreet">
+                            Rua/Avenida <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="businessStreet"
+                            name="businessStreet"
+                            placeholder="Nome da rua"
+                            value={formData.businessStreet}
+                            onChange={handleChange}
+                            className={errors.businessStreet ? "border-red-500" : ""}
+                            disabled={sameAddress}
+                          />
+                          {errors.businessStreet && <p className="text-red-500 text-sm">{errors.businessStreet}</p>}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="businessNumber">
+                            Número <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="businessNumber"
+                            name="businessNumber"
+                            placeholder="Nº"
+                            value={formData.businessNumber}
+                            onChange={handleChange}
+                            className={errors.businessNumber ? "border-red-500" : ""}
+                            disabled={sameAddress}
+                          />
+                          {errors.businessNumber && <p className="text-red-500 text-sm">{errors.businessNumber}</p>}
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-4 mb-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="businessComplement">Complemento</Label>
+                          <Input
+                            id="businessComplement"
+                            name="businessComplement"
+                            placeholder="Sala, Andar, etc."
+                            value={formData.businessComplement}
+                            onChange={handleChange}
+                            disabled={sameAddress}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="businessNeighborhood">
+                            Bairro <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="businessNeighborhood"
+                            name="businessNeighborhood"
+                            placeholder="Bairro"
+                            value={formData.businessNeighborhood}
+                            onChange={handleChange}
+                            className={errors.businessNeighborhood ? "border-red-500" : ""}
+                            disabled={sameAddress}
+                          />
+                          {errors.businessNeighborhood && (
+                            <p className="text-red-500 text-sm">{errors.businessNeighborhood}</p>
+                          )}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="businessCity">
+                            Cidade <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="businessCity"
+                            name="businessCity"
+                            placeholder="Cidade"
+                            value={formData.businessCity}
+                            onChange={handleChange}
+                            className={errors.businessCity ? "border-red-500" : ""}
+                            disabled={sameAddress}
+                          />
+                          {errors.businessCity && <p className="text-red-500 text-sm">{errors.businessCity}</p>}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="businessState">
+                            Estado <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="businessState"
+                            name="businessState"
+                            placeholder="UF"
+                            value={formData.businessState}
+                            onChange={handleChange}
+                            className={errors.businessState ? "border-red-500" : ""}
+                            disabled={sameAddress}
+                          />
+                          {errors.businessState && <p className="text-red-500 text-sm">{errors.businessState}</p>}
+                        </div>
+                      </div>
+
                       <div className="flex items-center mt-2">
                         <input
                           type="checkbox"
                           id="sameAddress"
                           className="mr-2"
+                          checked={sameAddress}
                           onChange={(e) => {
+                            setSameAddress(e.target.checked)
                             if (e.target.checked) {
                               setFormData((prev) => ({
                                 ...prev,
-                                businessAddress: prev.residentialAddress,
+                                businessCep: prev.residentialCep,
+                                businessStreet: prev.residentialStreet,
+                                businessNumber: prev.residentialNumber,
+                                businessComplement: prev.residentialComplement,
+                                businessNeighborhood: prev.residentialNeighborhood,
+                                businessCity: prev.residentialCity,
+                                businessState: prev.residentialState,
                               }))
                             }
                           }}
