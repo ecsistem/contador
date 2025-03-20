@@ -2,11 +2,11 @@ import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Hero } from "@/components/hero";
-import { Services } from "./components/services";
-import { Pricing } from "./components/pricing";
-import { Contact } from "./components/contact";
+import { Services } from "../components/services";
+import { Pricing } from "../components/pricing";
+import { Contact } from "../components/contact";
 
-export function App() {
+export function Home() {
   return (
     <>
       <Hero />
