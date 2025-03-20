@@ -5,7 +5,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4 text-gray-900">
-              Comtato
+              COMTATO
             </h3>
             <p className="text-gray-600">Sua contabilidade inteligente</p>
           </div>
@@ -44,7 +44,7 @@ export function Footer() {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-center text-gray-600">
-          © {new Date().getFullYear()} Comtato. Todos os direitos reservados.
+          © {new Date().getFullYear()} COMTATO. Todos os direitos reservados.
           </p>
         </div>
       </div>

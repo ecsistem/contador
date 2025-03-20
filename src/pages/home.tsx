@@ -149,7 +149,7 @@ const testimonials = [
   {
     name: "Ana Silva",
     company: "Tech Solutions",
-    text: "A Comtato transformou nossa gestão fiscal. Economizamos mais de 30% em impostos no primeiro ano.",
+    text: "A COMTATO transformou nossa gestão fiscal. Economizamos mais de 30% em impostos no primeiro ano.",
   },
   {
     name: "Carlos Santos",
@@ -159,6 +159,6 @@ const testimonials = [
   {
     name: "Marina Costa",
     company: "Startup Innovation",
-    text: "A melhor decisão que tomamos foi contratar a Comtato. Nossos processos contábeis nunca foram tão eficientes.",
+    text: "A melhor decisão que tomamos foi contratar a COMTATO. Nossos processos contábeis nunca foram tão eficientes.",
   },
 ];
