@@ -266,7 +266,7 @@ export function AboutUs() {
                     year: "2022",
                     title: "500 Clientes Atendidos",
                     description:
-                      "Marco de 500 empresas atendidas simultaneamente e abertura de escritórios em mais 4 capitais.",
+                      "Marco de 100 empresasatendidas simultaneamente e abertura de escritórios em mais 4 capitais.",
                     icon: <Users className="h-6 w-6 text-pink-500" />,
                   },
                   {

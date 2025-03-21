@@ -19,7 +19,7 @@ export function Hero() {
             Contabilidade <span className="text-transparent bg-clip-text bg-pink-500">Inteligente</span> para seu Negócio
           </h1>
           <p className="text-gray-600 text-xl max-w-2xl mx-auto">
-            Junte-se a mais de 500 empresas que já economizaram milhões em impostos com nossa consultoria especializada.
+            Junte-se a mais de 100 empresasque já economizaram milhões em impostos com nossa consultoria especializada.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
             <Button size="lg" className="bg-gradient-to-r from-pink-500 to-pink-600 text-white hover:opacity-90 transition-all group px-8 py-6 text-lg">
