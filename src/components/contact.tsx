@@ -60,7 +60,7 @@ export function Contact() {
                   <div>
                     <p className="font-medium">E-mail</p>
                     <p className="text-muted-foreground">
-                      contato@contamoderna.com.br
+                      contato@comtato.com.br
                     </p>
                   </div>
                 </div>

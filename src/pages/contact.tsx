@@ -69,8 +69,8 @@ export function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">E-mail</h3>
-                      <p className="text-muted-foreground mb-1">contato@contamoderna.com.br</p>
-                      <p className="text-muted-foreground">suporte@contamoderna.com.br</p>
+                      <p className="text-muted-foreground mb-1">contato@comtato.com.br</p>
+                      <p className="text-muted-foreground">suporte@comtato.com.br</p>
                     </div>
                   </div>
 
