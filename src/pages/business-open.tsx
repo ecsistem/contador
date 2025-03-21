@@ -603,7 +603,7 @@ Estado: ${formData.businessState}
               </p>
             </div>
 
-            <div className="max-w-3xl mx-auto">
+            <div className="mx-auto">
             <form onSubmit={handleSubmit} className="space-y-8">
                 <Card>
                   <CardHeader>
@@ -1074,7 +1074,7 @@ Estado: ${formData.businessState}
               </p>
             </div>
 
-            <div className="max-w-3xl mx-auto">
+            <div className="mx-auto">
               <Accordion type="single" collapsible className="w-full">
                 {[
                   {

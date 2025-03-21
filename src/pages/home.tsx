@@ -21,7 +21,7 @@ export function Home() {
             <div className="order-2 md:order-1">
               <img
                 src="/images/logo.svg"
-                alt="Benefícios da Contabilidade Moderna"
+                alt="COMTATO Logo"
                 width={500}
                 height={500}
               />

@@ -40,7 +40,7 @@ export function ContactPage() {
 
         {/* Contact Info & Form Section */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
               {/* Contact Information */}
               <div className="space-y-8">
@@ -218,7 +218,7 @@ export function ContactPage() {
         </section>
         {/* Quick Contact Options */}
         <section className="py-16 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl font-bold mb-4">Contato Rápido</h2>
               <p className="text-muted-foreground">Escolha a forma mais conveniente para entrar em contato conosco.</p>

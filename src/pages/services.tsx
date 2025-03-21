@@ -323,7 +323,7 @@ export function ServicesPage() {
         "O prazo para abertura de uma empresa varia conforme a localidade e o tipo de atividade. Em média, o processo leva de 5 a 15 dias úteis para empresas com atividades simples. Para negócios que necessitam de licenças específicas (como vigilância sanitária, ambiental, etc.), o prazo pode ser maior. Nossa equipe trabalha para agilizar ao máximo esse processo.",
     },
     {
-      question: "Como é feita a transição da minha contabilidade atual para a ContaModerna?",
+      question: "Como é feita a transição da minha contabilidade atual para a COMTATO?",
       answer:
         "A transição é realizada de forma organizada e sem interrupções para seu negócio. Iniciamos com uma reunião de alinhamento, seguida pela coleta de documentos e informações da contabilidade anterior. Realizamos uma análise da situação atual, regularizamos pendências se necessário, e implementamos nossos processos. Todo o histórico contábil é preservado e você recebe treinamento para utilizar nossa plataforma digital.",
     },
@@ -333,7 +333,7 @@ export function ServicesPage() {
         "Os principais documentos mensais incluem: extratos bancários, notas fiscais de compra e venda, comprovantes de pagamentos e recebimentos, folha de ponto dos funcionários e contratos firmados no período. Com nossa plataforma digital, você pode enviar esses documentos de forma simples, através de upload ou integração direta com sistemas de gestão.",
     },
     {
-      question: "A ContaModerna atende empresas de todos os portes e segmentos?",
+      question: "A COMTATO atende empresas de todos os portes e segmentos?",
       answer:
         "Sim, atendemos desde MEIs e pequenas empresas até grandes corporações, com soluções personalizadas para cada porte e necessidade. Temos especialistas em diversos segmentos como comércio, serviços, indústria, tecnologia, saúde, construção civil e muitos outros, oferecendo conhecimento específico para cada área de atuação.",
     },
@@ -572,7 +572,7 @@ export function ServicesPage() {
         {/* FAQ Section */}
         <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
                 Dúvidas Frequentes
               </div>
@@ -582,7 +582,7 @@ export function ServicesPage() {
               </p>
             </div>
 
-            <div className="max-w-3xl mx-auto">
+            <div className="mx-auto">
               <Accordion type="single" collapsible className="w-full">
                 {faqItems.map((item, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
@@ -621,19 +621,19 @@ export function ServicesPage() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  text: "A ContaModerna transformou completamente a gestão financeira da minha empresa. O acesso a relatórios em tempo real e o atendimento personalizado fazem toda a diferença.",
+                  text: "A COMTATO transformou completamente a gestão financeira da minha empresa. O acesso a relatórios em tempo real e o atendimento personalizado fazem toda a diferença.",
                   name: "Maria Silva",
                   company: "Boutique Elegance",
                   image: "/placeholder.svg?height=100&width=100",
                 },
                 {
-                  text: "Trabalhar com a ContaModerna nos permitiu focar no crescimento do negócio enquanto eles cuidam de toda a parte contábil e fiscal. O planejamento tributário que fizeram economizou muito dinheiro.",
+                  text: "Trabalhar com a COMTATO nos permitiu focar no crescimento do negócio enquanto eles cuidam de toda a parte contábil e fiscal. O planejamento tributário que fizeram economizou muito dinheiro.",
                   name: "João Oliveira",
                   company: "Tech Solutions",
                   image: "/placeholder.svg?height=100&width=100",
                 },
                 {
-                  text: "A transição para o digital foi muito mais tranquila do que imaginei. A equipe da ContaModerna nos acompanhou em cada passo e hoje temos muito mais controle sobre nossas finanças.",
+                  text: "A transição para o digital foi muito mais tranquila do que imaginei. A equipe da COMTATO nos acompanhou em cada passo e hoje temos muito mais controle sobre nossas finanças.",
                   name: "Ana Costa",
                   company: "Café Aroma",
                   image: "/placeholder.svg?height=100&width=100",

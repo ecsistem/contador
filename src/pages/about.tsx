@@ -49,10 +49,10 @@ export function AboutUs() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <img
-                  src="/placeholder.svg?height=600&width=600"
                   alt="Nossa História"
-                  width={600}
-                  height={600}
+                  src="/images/logo.svg"
+                width={500}
+                height={500}
                   className="rounded-xl shadow-lg"
                 />
               </div>
@@ -60,22 +60,15 @@ export function AboutUs() {
                 <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium">
                   Nossa História
                 </div>
-                <h2 className="text-3xl font-bold">De uma pequena sala para uma referência nacional</h2>
+                <h2 className="text-3xl font-bold">Sobre a COMTATO Contabilidade</h2>
                 <p className="text-muted-foreground">
-                  A COMTATO nasceu em 2010, quando três contadores visionários decidiram que era hora de
-                  revolucionar a forma como a contabilidade era feita no Brasil. Frustrados com processos burocráticos e
-                  desatualizados, Maria Silva, João Oliveira e Ana Costa uniram forças para criar uma contabilidade
-                  verdadeiramente moderna.
+                Fundada com a missão de transformar a contabilidade em uma ferramenta estratégica para os negócios, nossa empresa se dedica a fornecer soluções contábeis personalizadas, com foco no crescimento e sucesso de nossos clientes. Com uma equipe de profissionais experientes e qualificados, nosso objetivo é ser mais do que um prestador de serviços: queremos ser um verdadeiro parceiro do seu negócio, ajudando a simplificar a gestão financeira e a otimizar processos.
                 </p>
                 <p className="text-muted-foreground">
-                  Começamos em uma pequena sala comercial, atendendo apenas 15 clientes. Nossa obsessão pela qualidade e
-                  inovação rapidamente nos fez crescer. Em 2015, desenvolvemos nossa própria plataforma digital,
-                  permitindo que nossos clientes tivessem acesso a relatórios e documentos em tempo real.
+                Com anos de experiência, entendemos as complexidades do ambiente empresarial e trabalhamos para transformar a contabilidade em uma aliada na tomada de decisões, fornecendo dados e insights que promovem a sustentabilidade e o sucesso dos negócios. Acreditamos que, além de cumprir as obrigações legais, a contabilidade deve ajudar os empresários a planejar o futuro de forma estratégica e assertiva.
                 </p>
                 <p className="text-muted-foreground">
-                  Hoje, com mais de 500 empresas atendidas e escritórios em 5 capitais brasileiras, continuamos com o
-                  mesmo propósito: simplificar a vida financeira dos empreendedores brasileiros através de uma
-                  contabilidade transparente, eficiente e tecnológica.
+                Seja você um pequeno empresário ou um Microempreendedor Individual (MEI), estamos aqui para oferecer soluções contábeis de qualidade, garantindo a saúde financeira do seu negócio e impulsionando o seu crescimento sustentável.
                 </p>
               </div>
             </div>
@@ -103,7 +96,7 @@ export function AboutUs() {
                 <h3 className="text-xl font-bold mb-4">Missão</h3>
                 <p className="text-muted-foreground">
                   Transformar a contabilidade em uma ferramenta estratégica de crescimento para empresas brasileiras,
-                  através de soluções digitais, atendimento humanizado e expertise técnica.
+                  através de soluções, atendimento humanizado e expertise técnica.
                 </p>
               </div>
 
@@ -113,8 +106,7 @@ export function AboutUs() {
                 </div>
                 <h3 className="text-xl font-bold mb-4">Visão</h3>
                 <p className="text-muted-foreground">
-                  Ser reconhecida como a empresa de contabilidade mais inovadora do Brasil até 2030, referência em
-                  qualidade de serviço e satisfação do cliente.
+                Ser reconhecida como a parceira estratégica que transforma a contabilidade em um diferencial competitivo para empresas de todos os portes, oferecendo soluções inovadoras e consultivas que garantem crescimento sustentável e tomada de decisões mais assertivas.
                 </p>
               </div>
 
@@ -330,30 +322,24 @@ export function AboutUs() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  city: "Belém - PA",
-                  address: "Nome da rua, 1000 - Bairro",
-                  image: "/placeholder.svg?height=300&width=500",
-                },
-              ].map((office, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-xl">
-                  <img
-                    src={office.image || "/placeholder.svg"}
-                    alt={office.city}
-                    width={500}
-                    height={300}
-                    className="w-full aspect-video object-cover object-center group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 text-white">
-                    <h3 className="text-xl font-bold mb-1">{office.city}</h3>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-pink-300" />
-                      <p className="text-sm text-pink-100">{office.address}</p>
-                    </div>
-                  </div>
-                </div>
+            <div className={`grid ${offices.length === 1 ? "place-items-center" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"} gap-6`}>
+              {offices.map((office, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-xl">
+              <img
+              src={office.image || "/placeholder.svg"}
+              alt={office.city}
+              width={500}
+              height={300}
+              className="min-w-64 min-h-80 object-cover object-center group-hover:scale-110 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 text-white">
+              <h3 className="text-xl font-bold mb-1">{office.city}</h3>
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-pink-300" />
+                <p className="text-sm text-pink-100">{office.address}</p>
+              </div>
+              </div>
+              </div>
               ))}
             </div>
 
@@ -364,7 +350,7 @@ export function AboutUs() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
+        {/* <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
@@ -399,7 +385,7 @@ export function AboutUs() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Testimonials Section */}
         <section className="py-16 bg-white">
@@ -513,3 +499,10 @@ export function AboutUs() {
     </div>
   )
 }
+ const offices = [
+  {
+    city: "Belém - PA",
+    address: "Nome da rua, 1000 - Bairro",
+    image: "/placeholder.svg?height=300&width=500",
+  },
+ ]
