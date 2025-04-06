@@ -35,8 +35,9 @@ export function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium">Telefone</p>
-                    <p className="text-muted-foreground">(11) 4002-8922</p>
+                    <p className="font-medium">Telefones</p>
+                    <p className="text-muted-foreground">(61) 99633-3545</p>
+                    <p className="text-muted-foreground">(91) 99114-4551</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -60,7 +61,7 @@ export function Contact() {
                   <div>
                     <p className="font-medium">E-mail</p>
                     <p className="text-muted-foreground">
-                      contato@comtato.com.br
+                      atendimento@comtatocontabilidade.com.br
                     </p>
                   </div>
                 </div>
@@ -83,9 +84,12 @@ export function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium">Endereço</p>
+                    <p className="font-medium">Horário de Atendimento</p>
                     <p className="text-muted-foreground">
-                      Av. Paulista, 1000 - São Paulo, SP
+                      Segunda a sexta-feira de 08h às 18h
+                    </p>
+                    <p className="text-muted-foreground">
+                      Sábados de 08h às 12h
                     </p>
                   </div>
                 </div>
