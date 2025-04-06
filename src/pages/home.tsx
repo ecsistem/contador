@@ -1,6 +1,5 @@
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Hero } from "@/components/hero";
 import { Services } from "../components/services";
 import { Pricing } from "../components/pricing";
@@ -81,35 +80,6 @@ export function Home() {
           ))}
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-            O que nossos clientes dizem
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="ml-4">
-                    <p className="font-semibold text-gray-900">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      {testimonial.company}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-gray-600 italic">"{testimonial.text}"</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
       <Pricing />
       <Contact />
     </>
@@ -143,20 +113,4 @@ const features = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "Ana Silva",
-    company: "Tech Solutions",
-    text: "A COMTATO transformou nossa gestão fiscal. Economizamos mais de 30% em impostos no primeiro ano.",
-  },
-  {
-    name: "Carlos Santos",
-    company: "Mercado Express",
-    text: "Profissionais excepcionais e atendimento de primeira linha. Recomendo fortemente.",
-  },
-  {
-    name: "Marina Costa",
-    company: "Startup Innovation",
-    text: "A melhor decisão que tomamos foi contratar a COMTATO. Nossos processos contábeis nunca foram tão eficientes.",
-  },
-];
+
