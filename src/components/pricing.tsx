@@ -20,8 +20,8 @@ export function Pricing() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "Essencial",
-                price: "R$ 499",
+                name: "MEI",
+                price: "R$ 149",
                 description: "Ideal para MEIs e pequenos negócios",
                 features: [
                   "Contabilidade fiscal básica",
@@ -31,10 +31,11 @@ export function Pricing() {
                   "Suporte por e-mail",
                 ],
                 highlighted: false,
+                mensal: true,
               },
               {
-                name: "Empresarial",
-                price: "R$ 899",
+                name: "Simples Nacional",
+                price: "R$ 350",
                 description: "Perfeito para empresas em crescimento",
                 features: [
                   "Contabilidade fiscal completa",
@@ -46,10 +47,11 @@ export function Pricing() {
                   "Suporte prioritário",
                 ],
                 highlighted: true,
+                mensal: true,
               },
               {
-                name: "Premium",
-                price: "R$ 1.499",
+                name: "Lucro Real e Lucro Presumido",
+                price: "A consultar ",
                 description: "Para empresas que buscam excelência",
                 features: [
                   "Contabilidade fiscal e gerencial",
@@ -62,6 +64,7 @@ export function Pricing() {
                   "Consultor dedicado",
                 ],
                 highlighted: false,
+                mensal: false,
               },
             ].map((plan, index) => (
               <div
@@ -81,7 +84,7 @@ export function Pricing() {
                   <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                   <div className="flex items-end justify-center gap-1 mb-2">
                     <span className="text-3xl font-bold">{plan.price}</span>
-                    <span className="text-muted-foreground">/mês</span>
+                    {plan.mensal && <span className="text-muted-foreground">/mês</span>}
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {plan.description}

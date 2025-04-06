@@ -38,7 +38,6 @@ export function Home() {
               <div className="space-y-3 md:space-y-4">
                 {[
                   "Atendimento personalizado e ágil",
-                  "Plataforma digital para acesso 24/7",
                   "Equipe especializada e atualizada",
                   "Redução de custos operacionais",
                   "Segurança e conformidade fiscal",

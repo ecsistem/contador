@@ -16,7 +16,7 @@ export function Hero() {
       <div className="container mx-auto px-6 flex flex-col items-center justify-center z-10 flex-grow">
         <div className="max-w-4xl text-center space-y-8 animate-fade-up pt-12">
           <h1 className="text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-[#0f172a]">
-            Contabilidade <span className="text-transparent bg-clip-text bg-pink-500">Inteligente</span> para seu Negócio
+            Contabilidade <span className="text-transparent bg-clip-text bg-pink-500"> consultiva</span> para seu Negócio
           </h1>
           <p className="text-gray-600 text-xl max-w-2xl mx-auto">
             Junte-se a mais de 100 empresasque já economizaram milhões em impostos com nossa consultoria especializada.
