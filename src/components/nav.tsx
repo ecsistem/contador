@@ -10,14 +10,14 @@ export function Nav() {
     <div className="flex justify-center w-full pt-6">
       <nav className="container rounded-xl backdrop-blur-md bg-white/80 shadow-lg border border-white/30 overflow-hidden">
         <div className="p-4 flex justify-between items-center">
-            <div className="flex items-center">
+          <div className="flex items-center">
             <NavLink to="/" end>
               <img src="/images/logo.png" alt="Logo" width={160} height={80} className="h-10 w-auto" />
             </NavLink>
-            </div>
-          
+          </div>
+
           {/* Mobile menu button */}
-          <button 
+          <button
             className="md:hidden p-2 rounded-full hover:bg-white/40 transition-all duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -34,16 +34,16 @@ export function Nav() {
               Início
             </NavLink>
             <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/servicos" end>
-            Serviços
+              Serviços
             </NavLink>
             <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/sobre-nos" end>
-            Sobre
+              Sobre
             </NavLink>
             <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/abrir-empresa" end>
-            Abrir empresa
+              Abrir empresa
             </NavLink>
             <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/contatos" end>
-            Contatos
+              Contatos
             </NavLink>
             <Button className="bg-pink-500 text-white hover:bg-pink-600 shadow-md transition-all duration-300 hover:shadow-lg rounded-full px-6">
               Agendar Consulta
@@ -55,12 +55,27 @@ export function Nav() {
         {isMenuOpen && (
           <div className="md:hidden bg-white/90 border-t border-white/20">
             <div className="flex flex-col p-4 space-y-3">
-              <Button variant="ghost" className="text-gray-700 hover:text-gray-900 hover:bg-white/50 w-full justify-start font-medium">Serviços</Button>
-              <Button variant="ghost" className="text-gray-700 hover:text-gray-900 hover:bg-white/50 w-full justify-start font-medium">Sobre</Button>
-              <Button variant="ghost" className="text-gray-700 hover:text-gray-900 hover:bg-white/50 w-full justify-start font-medium">Contato</Button>
-              <Button className="bg-pink-500 text-white hover:bg-pink-600 w-full shadow-md transition-all duration-300 hover:shadow-lg rounded-full">
+              <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/" end>
+                Início
+              </NavLink>
+              <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/servicos" end>
+                Serviços
+              </NavLink>
+              <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/sobre-nos" end>
+                Sobre
+              </NavLink>
+              <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/abrir-empresa" end>
+                Abrir empresa
+              </NavLink>
+              <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/contatos" end>
+                Contatos
+              </NavLink>
+              <NavLink
+                className="bg-pink-500 text-white hover:bg-pink-600 w-full shadow-md transition-all duration-300 hover:shadow-lg rounded-full text-center py-2"
+                to="/agendar-consulta"
+              >
                 Agendar Consulta
-              </Button>
+              </NavLink>
             </div>
           </div>
         )}
