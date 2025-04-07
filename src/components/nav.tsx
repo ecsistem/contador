@@ -6,20 +6,34 @@ import { NavLink } from "react-router";
 export function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const navLinks = [
+    { to: "/", label: "Início" },
+    { to: "/servicos", label: "Serviços" },
+    { to: "/sobre-nos", label: "Sobre" },
+    { to: "/abrir-empresa", label: "Abrir empresa" },
+    { to: "/contatos", label: "Contatos" },
+  ];
+
   return (
     <div className="flex justify-center w-full pt-6">
       <nav className="container rounded-xl backdrop-blur-md bg-white/80 shadow-lg border border-white/30 overflow-hidden">
         <div className="p-4 flex justify-between items-center">
-          <div className="flex items-center">
-            <NavLink to="/" end>
-              <img src="/images/logo.png" alt="Logo" width={160} height={80} className="h-10 w-auto" />
-            </NavLink>
-          </div>
+          {/* Logo */}
+          <NavLink to="/" end>
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              width={160}
+              height={80}
+              className="h-10 w-auto"
+            />
+          </NavLink>
 
           {/* Mobile menu button */}
           <button
             className="md:hidden p-2 rounded-full hover:bg-white/40 transition-all duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? (
               <X className="h-6 w-6 text-gray-800" />
@@ -30,21 +44,16 @@ export function Nav() {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-5">
-            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/" end>
-              Início
-            </NavLink>
-            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/servicos" end>
-              Serviços
-            </NavLink>
-            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/sobre-nos" end>
-              Sobre
-            </NavLink>
-            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/abrir-empresa" end>
-              Abrir empresa
-            </NavLink>
-            <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/contatos" end>
-              Contatos
-            </NavLink>
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium"
+                to={link.to}
+                end
+              >
+                {link.label}
+              </NavLink>
+            ))}
             <Button className="bg-pink-500 text-white hover:bg-pink-600 shadow-md transition-all duration-300 hover:shadow-lg rounded-full px-6">
               Agendar Consulta
             </Button>
@@ -55,21 +64,16 @@ export function Nav() {
         {isMenuOpen && (
           <div className="md:hidden bg-white/90 border-t border-white/20">
             <div className="flex flex-col p-4 space-y-3">
-              <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/" end>
-                Início
-              </NavLink>
-              <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/servicos" end>
-                Serviços
-              </NavLink>
-              <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/sobre-nos" end>
-                Sobre
-              </NavLink>
-              <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/abrir-empresa" end>
-                Abrir empresa
-              </NavLink>
-              <NavLink className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium" to="/contatos" end>
-                Contatos
-              </NavLink>
+              {navLinks.map((link) => (
+                <NavLink
+                  key={link.to}
+                  className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium"
+                  to={link.to}
+                  end
+                >
+                  {link.label}
+                </NavLink>
+              ))}
               <NavLink
                 className="bg-pink-500 text-white hover:bg-pink-600 w-full shadow-md transition-all duration-300 hover:shadow-lg rounded-full text-center py-2"
                 to="/agendar-consulta"
