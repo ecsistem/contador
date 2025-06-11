@@ -9,7 +9,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-gray-900">
               COMTATO
             </h3>
-            <p className="text-gray-600">Sua contabilidade inteligente</p>
+            <p className="text-gray-600">Sua contabilidade consultiva para seu Negócio</p>
           </div>
           <div>
             <h4 className="text-sm font-semibold mb-4 text-gray-900">
