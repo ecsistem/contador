@@ -15,7 +15,10 @@ export function Nav() {
   ];
 
   const handleAgendarConsultaClick = () => {
-    window.open('https://wa.me/5561996333545', '_blank');
+    const whatsappNumber = "5561996333545";
+        const message = "Olá! Vim pelo site e gostaria de agendar uma consulta gratuita.";
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
   };
 
   return (
