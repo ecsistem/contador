@@ -1,6 +1,10 @@
 import { Button } from "./ui/button";
 
 export function Cta() {
+    const handleAgendarConsultaClick = () => {
+        window.open('https://wa.me/5561996333545', '_blank');
+    };
+
     return ( 
         <section className="py-20 bg-pink-500 text-white">
         <div className="container mx-auto px-4">
@@ -17,6 +21,7 @@ export function Cta() {
             <Button
               size="lg"
               className="bg-white text-pink-500 hover:bg-pink-50"
+              onClick={handleAgendarConsultaClick}
             >
               Agendar Consulta Gratuita
             </Button>
