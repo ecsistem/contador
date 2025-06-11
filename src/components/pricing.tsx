@@ -26,8 +26,7 @@ export function Pricing() {
                 features: [
                   "Contabilidade fiscal básica",
                   "Declarações obrigatórias",
-                  "Folha de pagamento (até 3 funcionários)",
-                  "Acesso à plataforma digital",
+                  "Folha de pagamento",
                   "Suporte por e-mail",
                 ],
                 highlighted: false,
