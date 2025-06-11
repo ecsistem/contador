@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -10,15 +10,59 @@ import {
   Send,
   MessageSquare,
   Instagram,
-  Facebook,
   Linkedin,
-  Twitter,
-  Youtube,
 } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent } from "@/components/ui/card"
 
 export function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, subject: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, company, email, phone, subject, message } = formData;
+
+    if (!name || !email || !phone || !message || !subject) {
+      alert("Por favor, preencha todos os campos obrigatórios.");
+      return;
+    }
+
+    const whatsappNumber = "5561996333545";
+    const text = `Olá! Contato vindo do site.
+*Assunto:* ${subject}
+*Nome:* ${name}
+*Empresa:* ${company || "Não informado"}
+*E-mail:* ${email}
+*Telefone:* ${phone}
+*Mensagem:* ${message}`;
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
+  const handleWhatsAppClick = () => {
+    const whatsappNumber = "5561996333545";
+    const message = "Olá! Vim pela página de Contato e gostaria de iniciar uma conversa.";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <main className="flex-1">
@@ -85,41 +129,22 @@ export function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-lg mb-4">Redes Sociais</h3>
                   <div className="flex gap-4">
-                    <Link
-                      to="https://instagram.com"
+                    <a
+                      href="https://instagram.com/comtatocontabilidade"
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="h-12 w-12 rounded-full bg-pink-100 hover:bg-pink-200 flex items-center justify-center transition-colors"
                     >
                       <Instagram className="h-6 w-6 text-pink-500" />
-                    </Link>
-                    <Link
-                      to="https://facebook.com"
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/raphaeltavares05/"
                       target="_blank"
-                      className="h-12 w-12 rounded-full bg-pink-100 hover:bg-pink-200 flex items-center justify-center transition-colors"
-                    >
-                      <Facebook className="h-6 w-6 text-pink-500" />
-                    </Link>
-                    <Link
-                      to="https://linkedin.com"
-                      target="_blank"
+                      rel="noopener noreferrer"
                       className="h-12 w-12 rounded-full bg-pink-100 hover:bg-pink-200 flex items-center justify-center transition-colors"
                     >
                       <Linkedin className="h-6 w-6 text-pink-500" />
-                    </Link>
-                    <Link
-                      to="https://twitter.com"
-                      target="_blank"
-                      className="h-12 w-12 rounded-full bg-pink-100 hover:bg-pink-200 flex items-center justify-center transition-colors"
-                    >
-                      <Twitter className="h-6 w-6 text-pink-500" />
-                    </Link>
-                    <Link
-                      to="https://youtube.com"
-                      target="_blank"
-                      className="h-12 w-12 rounded-full bg-pink-100 hover:bg-pink-200 flex items-center justify-center transition-colors"
-                    >
-                      <Youtube className="h-6 w-6 text-pink-500" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -129,49 +154,49 @@ export function ContactPage() {
                 <Card className="border-pink-100">
                   <CardContent className="p-6">
                     <h2 className="text-2xl font-bold mb-6">Envie uma Mensagem</h2>
-                    <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="name">Nome Completo</Label>
-                          <Input id="name" placeholder="Seu nome" />
+                          <Input id="name" placeholder="Seu nome" value={formData.name} onChange={handleChange} required />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="company">Empresa (Opcional)</Label>
-                          <Input id="company" placeholder="Sua empresa" />
+                          <Input id="company" placeholder="Sua empresa" value={formData.company} onChange={handleChange} />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="email">E-mail</Label>
-                          <Input id="email" type="email" placeholder="seu@email.com" />
+                          <Input id="email" type="email" placeholder="seu@email.com" value={formData.email} onChange={handleChange} required />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="phone">Telefone / WhatsApp</Label>
-                          <Input id="phone" placeholder="(00) 00000-0000" />
+                          <Input id="phone" placeholder="(00) 00000-0000" value={formData.phone} onChange={handleChange} required />
                         </div>
                       </div>
 
                       <div className="space-y-2">
                         <Label htmlFor="subject">Assunto</Label>
-                        <Select>
+                        <Select onValueChange={handleSelectChange} value={formData.subject}>
                           <SelectTrigger>
                             <SelectValue placeholder="Selecione o assunto" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="general">Informações Gerais</SelectItem>
-                            <SelectItem value="services">Serviços Contábeis</SelectItem>
-                            <SelectItem value="opening">Abertura de Empresa</SelectItem>
-                            <SelectItem value="tax">Planejamento Tributário</SelectItem>
-                            <SelectItem value="support">Suporte Técnico</SelectItem>
-                            <SelectItem value="other">Outro Assunto</SelectItem>
+                            <SelectItem value="Informações Gerais">Informações Gerais</SelectItem>
+                            <SelectItem value="Serviços Contábeis">Serviços Contábeis</SelectItem>
+                            <SelectItem value="Abertura de Empresa">Abertura de Empresa</SelectItem>
+                            <SelectItem value="Planejamento Tributário">Planejamento Tributário</SelectItem>
+                            <SelectItem value="Suporte Técnico">Suporte Técnico</SelectItem>
+                            <SelectItem value="Outro Assunto">Outro Assunto</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
 
                       <div className="space-y-2">
                         <Label htmlFor="message">Mensagem</Label>
-                        <Textarea id="message" placeholder="Como podemos ajudar?" rows={5} />
+                        <Textarea id="message" placeholder="Como podemos ajudar?" rows={5} value={formData.message} onChange={handleChange} required />
                       </div>
 
                       <Button type="submit" className="w-full bg-pink-500 hover:bg-pink-600 text-white">
@@ -214,14 +239,7 @@ export function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
                   <p className="text-muted-foreground mb-4">Envie uma mensagem e receba uma resposta rápida.</p>
-                  <a
-                    href="https://wa.me/5561996333545"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full"
-                  >
-                    <Button className="w-full bg-green-500 hover:bg-green-600 text-white">Iniciar Conversa</Button>
-                  </a>
+                  <Button onClick={handleWhatsAppClick} className="w-full bg-green-500 hover:bg-green-600 text-white">Iniciar Conversa</Button>
                 </CardContent>
               </Card>
 

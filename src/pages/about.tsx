@@ -15,6 +15,16 @@ import {
 import Rapha from "/images/rapha.jpeg"
 
 export function AboutUs() {
+
+  const handleConhecaEquipeClick = () => {
+    const whatsappNumber = "5561996333545";
+    const message = "Olá! Vim pela página 'Sobre Nós' e gostaria de conhecer a equipe.";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
 
@@ -31,10 +41,15 @@ export function AboutUs() {
               transparente e eficiente para empresas de todos os tamanhos.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-pink-500 hover:bg-pink-600 text-white">
+              <Button size="lg" className="bg-pink-500 hover:bg-pink-600 text-white" onClick={handleConhecaEquipeClick}>
                 Conheça Nossa Equipe
               </Button>
-              <Button size="lg" variant="outline" className="border-pink-200 hover:bg-pink-50">
+              <Button size="lg" variant="outline" className="border-pink-200 hover:bg-pink-50" onClick={() => {
+                  const element = document.getElementById("nossa-historia");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" })
+                  }
+                }}>
                 Nossa História
               </Button>
             </div>
@@ -42,7 +57,7 @@ export function AboutUs() {
         </section>
 
         {/* Our Story Section */}
-        <section className="py-16 bg-white">
+        <section id="nossa-historia" className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative">
@@ -163,6 +178,7 @@ export function AboutUs() {
             bio: "Contador com mais de 20 anos de experiência, especialista em gestão estratégica e inovação em serviços contábeis.",
             education: "Mestrado em Contabilidade pela UFPA",
             image: Rapha,
+            linkedin: "https://www.linkedin.com/in/raphaeltavares05/",
           },
         ].map((member, index) => (
           <div
@@ -191,7 +207,9 @@ export function AboutUs() {
               <h3 className="text-xl font-bold">{member.name}</h3>
               <p className="text-pink-500 font-medium mb-4">{member.role}</p>
               <a
-                href="#"
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-sm font-medium text-pink-500 hover:underline"
               >
                 Ver perfil completo <ArrowRight className="ml-1 h-4 w-4" />
@@ -203,7 +221,7 @@ export function AboutUs() {
     </div>
 
     <div className="text-center mt-12">
-      <Button className="bg-pink-500 hover:bg-pink-600 text-white">Conheça Toda a Equipe</Button>
+      <Button className="bg-pink-500 hover:bg-pink-600 text-white" onClick={handleConhecaEquipeClick}>Conheça Toda a Equipe</Button>
     </div>
   </div>
 </section>

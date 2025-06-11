@@ -1,8 +1,15 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-// import { Card } from "@/components/ui/card";
 
 export function Hero() {
+
+  const handleAgendarConsultaClick = () => {
+    const whatsappNumber = "5561996333545";
+    const message = "Olá! Vim pelo site e gostaria de agendar uma consulta gratuita.";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section className="relative py-24 md:py-48 min-h-96 flex flex-col overflow-hidden bg-gradient-to-br from-transparent to-pink-50">
       {/* Background decorative elements */}
@@ -22,8 +29,12 @@ export function Hero() {
             Junte-se a mais de 100 empresasque já economizaram milhões em impostos com nossa consultoria especializada.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-pink-500 to-pink-600 text-white hover:opacity-90 transition-all group px-8 py-6 text-lg">
-              Começar Agora
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-pink-500 to-pink-600 text-white hover:opacity-90 transition-all group px-8 py-6 text-lg"
+              onClick={handleAgendarConsultaClick}
+            >
+              Agendar Consulta
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="outline" size="lg" className="border-pink-200 text-pink-600 hover:bg-pink-50 px-8 py-6 text-lg" onClick={() => {
@@ -37,34 +48,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Results section - Bottom */}
-      {/* <div className="container mx-auto px-6 pb-12 z-10">
-        <div className="relative mx-auto max-w-5xl mt-8 mb-4">
-          <div className="absolute -inset-2 bg-gradient-to-r from-pink-500/20 to-purple-600/20 rounded-2xl blur-xl"></div>
-          <Card className="relative bg-white/80 backdrop-blur-sm shadow-2xl p-8 border border-gray-100/50 rounded-2xl">
-            <h3 className="text-2xl font-semibold mb-8 text-center text-gray-800">Resultados Comprovados</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center p-4 transform hover:scale-105 transition-transform">
-                <h3 className="text-5xl font-bold text-pink-500 bg-clip-text">500+</h3>
-                <p className="text-gray-600 mt-2 font-medium">Clientes Ativos</p>
-              </div>
-              <div className="text-center p-4 transform hover:scale-105 transition-transform">
-                <h3 className="text-5xl font-bold text-pink-500 bg-clip-text">98%</h3>
-                <p className="text-gray-600 mt-2 font-medium">Satisfação</p>
-              </div>
-              <div className="text-center p-4 transform hover:scale-105 transition-transform">
-                <h3 className="text-5xl font-bold text-pink-500 bg-clip-text">15M+</h3>
-                <p className="text-gray-600 mt-2 font-medium">Economizados</p>
-              </div>
-              <div className="text-center p-4 transform hover:scale-105 transition-transform">
-                <h3 className="text-5xl font-bold text-pink-500 bg-clip-text">10+</h3>
-                <p className="text-gray-600 mt-2 font-medium">Anos de Experiência</p>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </div> */}
     </section>
   );
 }
