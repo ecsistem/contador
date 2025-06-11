@@ -30,9 +30,18 @@ export function Home() {
                 Por que escolher nossa contabilidade?
               </h2>
               <p className="text-muted-foreground">
-                Nossa abordagem moderna combina tecnologia avançada com
-                atendimento personalizado para oferecer o melhor serviço
-                contábil para sua empresa.
+                O mercado está cada vez mais dinâmico e competitivo, e ter um
+                profissional contábil que vai além da burocracia e atua como um
+                verdadeiro parceiro de negócios faz toda a diferença. A
+                Contabilidade Consultiva proporciona maior previsibilidade
+                financeira, otimização de resultados e segurança na gestão
+                empresarial. 
+                <br />
+                Empresas que adotam esse modelo contábil conseguem
+                crescer com mais solidez, tomar decisões embasadas e evitar
+                surpresas financeiras. Portanto, contar com uma contabilidade
+                consultiva é um diferencial estratégico para qualquer negócio
+                que deseja se destacar no mercado.
               </p>
               <div className="space-y-3 md:space-y-4">
                 {[
@@ -112,5 +121,3 @@ const features = [
     description: "Informações claras e objetivas sobre seu negócio.",
   },
 ];
-
-

@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
+
 export function Footer() {
-    return ( 
+    return (
       <footer className="bg-white border-t border-gray-100">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -14,10 +16,10 @@ export function Footer() {
               Serviços
             </h4>
             <ul className="space-y-2 text-gray-600">
-              <li>Consultoria Fiscal</li>
-              <li>Análise Financeira</li>
-              <li>Gestão de Folha</li>
-              <li>Abertura de Empresa</li>
+              <li><Link to="/servicos" className="hover:text-gray-900">Consultoria Fiscal</Link></li>
+              <li><Link to="/servicos" className="hover:text-gray-900">Análise Financeira</Link></li>
+              <li><Link to="/servicos" className="hover:text-gray-900">Gestão de Folha</Link></li>
+              <li><Link to="/abrir-empresa" className="hover:text-gray-900">Abertura de Empresa</Link></li>
             </ul>
           </div>
           <div>
@@ -25,22 +27,32 @@ export function Footer() {
               Empresa
             </h4>
             <ul className="space-y-2 text-gray-600">
-              <li>Sobre Nós</li>
-              <li>Carreiras</li>
-              <li>Blog</li>
-              <li>Contato</li>
+              <li><Link to="/sobre-nos" className="hover:text-gray-900">Sobre Nós</Link></li>
+              <li><Link to="/contatos" className="hover:text-gray-900">Contato</Link></li>
             </ul>
           </div>
-          <div>
+            <div>
             <h4 className="text-sm font-semibold mb-4 text-gray-900">
-              Legal
+              Contatos
             </h4>
-            <ul className="space-y-2 text-gray-600">
-              <li>Termos de Uso</li>
-              <li>Privacidade</li>
-              <li>Cookies</li>
+            <ul className="space-y-2 text-gray-600 break-words">
+              <li>
+              <a href="tel:+5561996333545" className="hover:text-gray-900 block">
+                (61) 99633-3545
+              </a>
+              </li>
+              <li>
+              <a href="tel:+5591991144551" className="hover:text-gray-900 block">
+                (91) 99114-4551
+              </a>
+              </li>
+              <li>
+              <a href="mailto:atendimento@comtatocontabilidade.com.br" className="hover:text-gray-900 block break-all">
+                atendimento@comtatocontabilidade.com.br
+              </a>
+              </li>
             </ul>
-          </div>
+            </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-center text-gray-600">

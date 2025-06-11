@@ -249,7 +249,7 @@ Estado: ${formData.businessState}
       me: "Microempresa (ME)",
       epp: "Empresa de Pequeno Porte (EPP)",
       ei: "Empresário Individual (EI)",
-      eireli: "Empresa Individual de Responsabilidade Limitada (EIRELI)",
+      slu: "Sociedade Limitada Unipessoal (SLU)",
       ltda: "Sociedade Limitada (LTDA)",
       sa: "Sociedade Anônima (S.A.)",
     }
@@ -289,13 +289,13 @@ Estado: ${formData.businessState}
       title: "Microempreendedor Individual (MEI)",
       description: "Ideal para profissionais autônomos com faturamento anual de até R$ 81.000,00.",
       benefits: [
-        "Baixo custo mensal (apenas DAS)",
+        "Baixo custo mensal",
         "Processo simplificado de abertura",
-        "Isenção de tributos federais",
         "Cobertura previdenciária",
         "Emissão de notas fiscais",
       ],
       limitations: [
+        "Necessidade de contrato social",
         "Limite de faturamento de R$ 81.000,00 por ano",
         "Pode contratar apenas 1 funcionário",
         "Atividades limitadas (não pode ter sócio)",
@@ -313,9 +313,11 @@ Estado: ${formData.businessState}
         "Maior variedade de atividades permitidas",
       ],
       limitations: [
+        "Necessidade de contrato social",
         "Limite de faturamento de R$ 360.000,00 por ano",
         "Carga tributária maior que o MEI",
         "Processo de abertura mais complexo",
+        "Carga tributária progressiva conforme faturamento"
       ],
     },
     {
@@ -329,7 +331,9 @@ Estado: ${formData.businessState}
         "Possibilidade de exportação simplificada",
       ],
       limitations: [
+        "Necessidade de contrato social",
         "Limite de faturamento de R$ 4.800.000,00 por ano",
+        "Processo de abertura mais complexo",
         "Carga tributária progressiva conforme faturamento",
       ],
     },
@@ -343,21 +347,20 @@ Estado: ${formData.businessState}
         "Pode optar pelo Simples Nacional",
       ],
       limitations: [
-        "Responsabilidade ilimitada (bens pessoais respondem por dívidas)",
+        "Responsabilidade limitada (bens pessoais respondem por dívidas)",
         "Não pode ter sócios",
-        "Limitações para captação de investimentos",
       ],
     },
     {
-      id: "eireli",
-      title: "Empresa Individual de Responsabilidade Limitada (EIRELI)",
+      id: "slu",
+      title: "Sociedade Limitada Unipessoal (SLU)",
       description: "Empresa individual com responsabilidade limitada ao capital social.",
       benefits: [
         "Responsabilidade limitada ao capital social",
-        "Controle total sobre o negócio",
         "Pode optar pelo Simples Nacional",
       ],
       limitations: [
+        "Necessidade de contrato social",
         "Capital social mínimo de 100 salários mínimos",
         "Não pode ter sócios",
         "Processo de abertura mais complexo",
@@ -371,11 +374,11 @@ Estado: ${formData.businessState}
         "Responsabilidade limitada ao capital social",
         "Pode ter múltiplos sócios",
         "Flexibilidade na distribuição de lucros",
-        "Pode optar pelo Simples Nacional (se elegível)",
+        "Pode optar pelo Simples Nacional",
       ],
       limitations: [
-        "Processo de abertura mais complexo",
         "Necessidade de contrato social",
+        "Processo de abertura mais complexo",
         "Maior custo de manutenção",
       ],
     },
@@ -390,6 +393,7 @@ Estado: ${formData.businessState}
         "Continuidade do negócio independente dos acionistas",
       ],
       limitations: [
+        "Necessidade de contrato social",
         "Processo de abertura complexo e custoso",
         "Necessidade de publicação de balanços",
         "Não pode optar pelo Simples Nacional",

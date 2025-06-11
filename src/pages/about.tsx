@@ -4,7 +4,6 @@ import {
   Award,
   Users,
   Target,
-  Clock,
   CheckCircle,
   ArrowRight,
   Building,
@@ -12,7 +11,6 @@ import {
   GraduationCap,
   Heart,
   TrendingUp,
-  MapPin,
 } from "lucide-react"
 import Rapha from "/images/rapha.jpeg"
 
@@ -219,7 +217,7 @@ export function AboutUs() {
               </div>
               <h2 className="text-3xl font-bold mb-4">Marcos Importantes</h2>
               <p className="text-muted-foreground">
-                Uma jornada de inovação, crescimento e compromisso com a excelência em contabilidade.
+                Uma jornada de evolução, inovação e compromisso com o sucesso dos nossos clientes.
               </p>
             </div>
 
@@ -230,52 +228,69 @@ export function AboutUs() {
               <div className="space-y-12">
                 {[
                   {
-                    year: "2010",
-                    title: "Fundação da COMTATO",
+                    year: "2022",
+                    title: "Fundação da COMTATO CONTABILIDADE",
                     description:
-                      "Início das operações com apenas 3 colaboradores e 15 clientes em uma pequena sala comercial.",
+                      "Em 22 de novembro de 2022, após anos atuando como Consultor Financeiro, Econômico e Operacional, foi oficialmente fundada a COMTATO CONTABILIDADE.",
                     icon: <Building className="h-6 w-6 text-pink-500" />,
                   },
                   {
-                    year: "2013",
-                    title: "Primeiro Escritório Próprio",
-                    description: "Aquisição do primeiro escritório próprio e expansão da equipe para 15 colaboradores.",
-                    icon: <MapPin className="h-6 w-6 text-pink-500" />,
-                  },
-                  {
-                    year: "2015",
-                    title: "Lançamento da Plataforma Digital",
-                    description:
-                      "Desenvolvimento e lançamento da plataforma digital própria, revolucionando o atendimento aos clientes.",
+                    year: "2023",
+                    title: "Contabilidade Consultiva & BPO Financeiro",
+                    description: (
+                      <>
+                        <span>Implementação da Contabilidade Consultiva: A empresa adotou a contabilidade consultiva como uma nova abordagem, visando uma interação mais estratégica entre o contador e o empresário. Esse modelo permite a análise conjunta de dados para embasar decisões empresariais mais eficazes.</span>
+                        <br /><br />
+                        <span>Oferecimento de BPO Financeiro: Introduziu o serviço de Business Process Outsourcing (BPO) Financeiro, assumindo total ou parcialmente a gestão financeira dos clientes. O objetivo é integrar as rotinas contábeis e obrigações tributárias com a inteligência operacional das empresas atendidas.</span>
+                        <br /><br />
+                        <span>Foco na Redução de Custos e Inovação: Comprometeu-se a implementar ações estratégicas que resultem em redução de falhas e custos, além de promover inovação nos processos contábeis.</span>
+                        <br /><br />
+                        <span>Garantia de Conformidade Tributária: Assegurou que as empresas clientes estejam livres de riscos tributários, fornecendo informações confiáveis para a tomada de decisões.</span>
+                      </>
+                    ),
                     icon: <Briefcase className="h-6 w-6 text-pink-500" />,
-                  },
-                  {
-                    year: "2017",
-                    title: "Expansão para São Paulo",
-                    description: "Abertura do escritório em São Paulo, marcando o início da expansão nacional.",
-                    icon: <TrendingUp className="h-6 w-6 text-pink-500" />,
-                  },
-                  {
-                    year: "2019",
-                    title: "Prêmio de Inovação",
-                    description:
-                      "Reconhecimento como empresa mais inovadora do setor contábil pelo Conselho Federal de Contabilidade.",
-                    icon: <Award className="h-6 w-6 text-pink-500" />,
-                  },
-                  {
-                    year: "2022",
-                    title: "500 Clientes Atendidos",
-                    description:
-                      "Marco de 100 empresasatendidas simultaneamente e abertura de escritórios em mais 4 capitais.",
-                    icon: <Users className="h-6 w-6 text-pink-500" />,
-                  },
-                  {
+                    },
+                    {
                     year: "2024",
-                    title: "Lançamento do App Mobile",
-                    description: "Lançamento do aplicativo móvel, permitindo acesso à contabilidade na palma da mão.",
-                    icon: <Clock className="h-6 w-6 text-pink-500" />,
-                  },
-                ].map((milestone, index) => (
+                    title: "Fortalecimento da Parceria com Clientes",
+                    description: (
+                      <>
+                      <span>
+                        Fortalecimento da Parceria com Clientes: Buscou ampliar o significado do papel do contador, promovendo uma maior proximidade com os empresários e sendo reconhecida como uma fonte de conhecimento e aliada estratégica nos negócios.
+                      </span>
+                      <br /><br />
+                      <span>
+                        Aprimoramento dos Serviços de Gestão Financeira: Além de manter a conformidade e a rotina padrão, passou a auxiliar ativamente na gestão financeira das empresas clientes, contribuindo para o sucesso empresarial.
+                      </span>
+                      </>
+                    ),
+                    icon: <Users className="h-6 w-6 text-pink-500" />,
+                    },
+                    {
+                    year: "2025",
+                    title: "Expansão e Inovação",
+                    description: (
+                      <>
+                      <span>
+                        Expansão dos Serviços de Consultoria: Planeja expandir os serviços de consultoria oferecidos, visando atender a um número maior de empresas e diversificar as áreas de atuação.
+                      </span>
+                      <br /><br />
+                      <span>
+                        Investimento em Tecnologia: Pretende aumentar o investimento em novas tecnologias para otimizar os processos contábeis e financeiros, oferecendo soluções mais eficientes e modernas aos clientes.
+                      </span>
+                      <br /><br />
+                      <span>
+                        Capacitação Contínua da Equipe: Compromete-se a promover a capacitação contínua de sua equipe, garantindo que os profissionais estejam atualizados com as constantes mudanças na legislação e nas práticas contábeis.
+                      </span>
+                      <br /><br />
+                      <span>
+                        Esses objetivos refletem o compromisso da COMTATO CONTABILIDADE em oferecer serviços de alta qualidade, adaptando-se às necessidades do mercado e contribuindo para o sucesso de seus clientes.
+                      </span>
+                      </>
+                    ),
+                    icon: <Award className="h-6 w-6 text-pink-500" />,
+                    },
+                  ].map((milestone, index) => (
                   <div
                     key={index}
                     className={`relative flex items-start md:items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}

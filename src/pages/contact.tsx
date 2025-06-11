@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label"
 import {
   Phone,
   Mail,
-  MapPin,
   Clock,
   Send,
   MessageSquare,
@@ -15,7 +14,6 @@ import {
   Linkedin,
   Twitter,
   Youtube,
-  ArrowRight,
 } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent } from "@/components/ui/card"
@@ -32,8 +30,7 @@ export function ContactPage() {
               Entre em <span className="text-pink-500">Contato</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Estamos prontos para atender suas necessidades contábeis e financeiras. Entre em contato conosco hoje
-              mesmo.
+              Estamos prontos para atender suas necessidades contábeis e financeiras. Fale conosco hoje mesmo.
             </p>
           </div>
         </section>
@@ -45,9 +42,9 @@ export function ContactPage() {
               {/* Contact Information */}
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-3xl font-bold mb-6">Informações de Contato</h2>
+                  <h2 className="text-3xl font-bold mb-6">Nossos Canais</h2>
                   <p className="text-muted-foreground mb-8">
-                    Utilize os canais abaixo para entrar em contato conosco ou preencha o formulário ao lado.
+                    Nosso atendimento é 100% digital. Utilize os canais abaixo ou preencha o formulário ao lado.
                   </p>
                 </div>
 
@@ -57,9 +54,9 @@ export function ContactPage() {
                       <Phone className="h-6 w-6 text-pink-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg">Telefone</h3>
-                      <p className="text-muted-foreground mb-1">(11) 4002-8922</p>
-                      <p className="text-muted-foreground">Whatsapp: (11) 98765-4321</p>
+                      <h3 className="font-semibold text-lg">Telefones</h3>
+                      <p className="text-muted-foreground mb-1">(61) 99633-3545 (WhatsApp)</p>
+                      <p className="text-muted-foreground">(91) 99114-4551</p>
                     </div>
                   </div>
 
@@ -69,19 +66,7 @@ export function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">E-mail</h3>
-                      <p className="text-muted-foreground mb-1">contato@comtato.com.br</p>
-                      <p className="text-muted-foreground">suporte@comtato.com.br</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-pink-500" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">Endereço</h3>
-                      <p className="text-muted-foreground mb-1">Av. Paulista, 1000 - Bela Vista</p>
-                      <p className="text-muted-foreground">São Paulo - SP, 01310-100</p>
+                      <p className="text-muted-foreground">atendimento@comtatocontabilidade.com.br</p>
                     </div>
                   </div>
 
@@ -91,8 +76,8 @@ export function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">Horário de Atendimento</h3>
-                      <p className="text-muted-foreground mb-1">Segunda a Sexta: 8h às 18h</p>
-                      <p className="text-muted-foreground">Sábado: 9h às 13h</p>
+                      <p className="text-muted-foreground mb-1">Segunda a sexta-feira de 08h às 18h</p>
+                      <p className="text-muted-foreground">Sábados de 08h às 12h</p>
                     </div>
                   </div>
                 </div>
@@ -137,12 +122,6 @@ export function ContactPage() {
                     </Link>
                   </div>
                 </div>
-
-                <div className="pt-4">
-                  <Link to="/links" className="inline-flex items-center text-pink-500 font-medium hover:underline">
-                    Ver todos os nossos links <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
               </div>
 
               {/* Contact Form */}
@@ -157,7 +136,7 @@ export function ContactPage() {
                           <Input id="name" placeholder="Seu nome" />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="company">Empresa</Label>
+                          <Label htmlFor="company">Empresa (Opcional)</Label>
                           <Input id="company" placeholder="Sua empresa" />
                         </div>
                       </div>
@@ -168,7 +147,7 @@ export function ContactPage() {
                           <Input id="email" type="email" placeholder="seu@email.com" />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="phone">Telefone</Label>
+                          <Label htmlFor="phone">Telefone / WhatsApp</Label>
                           <Input id="phone" placeholder="(00) 00000-0000" />
                         </div>
                       </div>
@@ -195,17 +174,6 @@ export function ContactPage() {
                         <Textarea id="message" placeholder="Como podemos ajudar?" rows={5} />
                       </div>
 
-                      <div className="flex items-start gap-2">
-                        <input type="checkbox" id="privacy" className="mt-1" />
-                        <label htmlFor="privacy" className="text-sm text-muted-foreground">
-                          Concordo com a{" "}
-                          <Link to="#" className="text-pink-500 hover:underline">
-                            Política de Privacidade
-                          </Link>{" "}
-                          e autorizo o uso dos meus dados para contato.
-                        </label>
-                      </div>
-
                       <Button type="submit" className="w-full bg-pink-500 hover:bg-pink-600 text-white">
                         Enviar Mensagem <Send className="ml-2 h-4 w-4" />
                       </Button>
@@ -216,12 +184,13 @@ export function ContactPage() {
             </div>
           </div>
         </section>
+
         {/* Quick Contact Options */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gradient-to-b from-white to-pink-50">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl font-bold mb-4">Contato Rápido</h2>
-              <p className="text-muted-foreground">Escolha a forma mais conveniente para entrar em contato conosco.</p>
+              <p className="text-muted-foreground">Escolha a forma mais conveniente para falar conosco.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -231,8 +200,10 @@ export function ContactPage() {
                     <Phone className="h-8 w-8 text-pink-500" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Ligue para Nós</h3>
-                  <p className="text-muted-foreground mb-4">Fale diretamente com nossa equipe de atendimento.</p>
-                  <Button className="bg-pink-500 hover:bg-pink-600 text-white">(11) 4002-8922</Button>
+                  <p className="text-muted-foreground mb-4">Fale diretamente com um de nossos especialistas.</p>
+                  <a href="tel:+5591991144551" className="w-full">
+                    <Button className="w-full bg-pink-500 hover:bg-pink-600 text-white">(91) 99114-4551</Button>
+                  </a>
                 </CardContent>
               </Card>
 
@@ -242,8 +213,15 @@ export function ContactPage() {
                     <MessageSquare className="h-8 w-8 text-pink-500" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
-                  <p className="text-muted-foreground mb-4">Envie uma mensagem e receba resposta imediata.</p>
-                  <Button className="bg-green-500 hover:bg-green-600 text-white">Iniciar Conversa</Button>
+                  <p className="text-muted-foreground mb-4">Envie uma mensagem e receba uma resposta rápida.</p>
+                  <a
+                    href="https://wa.me/5561996333545"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <Button className="w-full bg-green-500 hover:bg-green-600 text-white">Iniciar Conversa</Button>
+                  </a>
                 </CardContent>
               </Card>
 
@@ -253,8 +231,10 @@ export function ContactPage() {
                     <Mail className="h-8 w-8 text-pink-500" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">E-mail</h3>
-                  <p className="text-muted-foreground mb-4">Envie sua mensagem para nosso e-mail de contato.</p>
-                  <Button className="bg-pink-500 hover:bg-pink-600 text-white">Enviar E-mail</Button>
+                  <p className="text-muted-foreground mb-4">Envie sua dúvida ou solicitação para nosso e-mail.</p>
+                  <a href="mailto:atendimento@comtatocontabilidade.com.br" className="w-full">
+                    <Button className="w-full bg-pink-500 hover:bg-pink-600 text-white">Enviar E-mail</Button>
+                  </a>
                 </CardContent>
               </Card>
             </div>
@@ -264,4 +244,3 @@ export function ContactPage() {
     </div>
   )
 }
-

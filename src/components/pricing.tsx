@@ -21,7 +21,7 @@ export function Pricing() {
             {[
               {
                 name: "MEI",
-                price: "R$ 149",
+                price: "R$ 150",
                 description: "Ideal para MEIs e pequenos negócios",
                 features: [
                   "Contabilidade fiscal básica",
@@ -75,11 +75,11 @@ export function Pricing() {
                     : "border-pink-100 bg-white/80"
                 }`}
               >
-                {plan.highlighted && (
+                {/* {plan.highlighted && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pink-500 text-white px-4 py-1 rounded-full text-sm font-medium">
                     Mais Popular
                   </div>
-                )}
+                )} */}
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                   <div className="flex items-end justify-center gap-1 mb-2">
