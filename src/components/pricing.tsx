@@ -2,6 +2,13 @@ import { CheckCircle } from "lucide-react";
 import { Button } from "./ui/button";
 
 export function Pricing() {
+    const handleContratarClick = (planName: string) => {
+        const whatsappNumber = "5561996333545";
+        const message = `Olá! Tenho interesse no plano ${planName} e gostaria de mais informações.`;
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    };
+
     return (
         <section
         id="pricing"
@@ -98,6 +105,7 @@ export function Pricing() {
                   ))}
                 </div>
                 <Button
+                  onClick={() => handleContratarClick(plan.name)}
                   className={`w-full ${
                     plan.highlighted
                       ? "bg-pink-500 hover:bg-pink-600 text-white"

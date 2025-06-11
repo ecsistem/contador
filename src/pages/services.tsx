@@ -543,12 +543,6 @@ export function ServicesPage() {
                 </div>
               ))}
             </div>
-
-            <div className="mt-12 text-center">
-              <Button className="bg-pink-500 hover:bg-pink-600 text-white">
-                Ver Todos os Serviços
-              </Button>
-            </div>
           </div>
         </section>
 
