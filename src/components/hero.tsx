@@ -26,7 +26,12 @@ export function Hero() {
               Começar Agora
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="lg" className="border-pink-200 text-pink-600 hover:bg-pink-50 px-8 py-6 text-lg">
+            <Button variant="outline" size="lg" className="border-pink-200 text-pink-600 hover:bg-pink-50 px-8 py-6 text-lg" onClick={() => {
+                  const element = document.getElementById("pricing");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" })
+                  }
+                }}>
               Conhecer Planos
             </Button>
           </div>

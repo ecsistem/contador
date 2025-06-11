@@ -37,7 +37,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 import { Contact } from "@/components/contact";
 import { Pricing } from "@/components/pricing";
 
@@ -332,147 +331,203 @@ export function ServicesPage() {
 
   // FAQ items
   const faqItems = [
-  {
-    question: "O que é Contabilidade Consultiva e sua Importância?",
-    answer: (
-      <>
-        A Contabilidade Consultiva é um modelo inovador de atuação contábil que
-        vai além da simples apuração de impostos e elaboração de
-        demonstrativos financeiros. Diferente da contabilidade tradicional, que
-        tem um foco maior no cumprimento das obrigações fiscais e contábeis, a
-        Contabilidade Consultiva busca oferecer uma assessoria estratégica e
-        personalizada para empresas e empreendedores.
-        <br />
-        <br />
-        Essa abordagem envolve o uso da contabilidade como uma ferramenta de
-        gestão, ajudando na tomada de decisões, na análise de indicadores
-        financeiros e na construção de estratégias para o crescimento
-        sustentável do negócio. O contador consultivo trabalha lado a lado com o
-        empresário, interpretando dados, identificando oportunidades e riscos e
-        propondo soluções que impactam positivamente a lucratividade e
-        eficiência da empresa.
-      </>
-    ),
-  },
-  {
-    question: "Principais Benefícios da Contabilidade Consultiva",
-    answer: (
-      <>
-        <strong>Tomada de Decisões Estratégicas</strong> – Com relatórios
-        personalizados e análises detalhadas, o gestor consegue ter uma visão
-        clara da saúde financeira da empresa e tomar decisões mais assertivas.
-        <br />
-        <strong>Redução de Custos e Aumento da Lucratividade</strong> – A
-        contabilidade consultiva auxilia na identificação de desperdícios e
-        oportunidades de otimização dos recursos, melhorando a rentabilidade do
-        negócio.
-        <br />
-        <strong>Planejamento Tributário Eficiente</strong> – Um contador
-        consultivo pode ajudar a empresa a pagar menos impostos dentro da
-        legalidade, evitando gastos desnecessários com tributos.
-        <br />
-        <strong>Maior Segurança e Conformidade</strong> – Além de atender às
-        exigências fiscais e contábeis, a consultoria contábil evita problemas
-        com o fisco, reduzindo riscos de autuações e penalidades.
-        <br />
-        <strong>Foco no Crescimento do Negócio</strong> – Com uma visão
-        estratégica e personalizada, a empresa consegue direcionar esforços
-        para o crescimento sustentável e a melhoria contínua.
-      </>
-    ),
-  },
-  {
-    question: "Por que investir em Contabilidade Consultiva?",
-    answer: (
-      <>
-        O mercado está cada vez mais dinâmico e competitivo, e ter um
-        profissional contábil que vai além da burocracia e atua como um
-        verdadeiro parceiro de negócios faz toda a diferença. A Contabilidade
-        Consultiva proporciona maior previsibilidade financeira, otimização de
-        resultados e segurança na gestão empresarial.
-        <br />
-        <br />
-        Empresas que adotam esse modelo contábil conseguem crescer com mais
-        solidez, tomar decisões embasadas e evitar surpresas financeiras.
-        Portanto, contar com uma contabilidade consultiva é um diferencial
-        estratégico para qualquer negócio que deseja se destacar no mercado.
-      </>
-    ),
-  },
-  {
-    question: "Quais são os regimes tributários disponíveis para minha empresa?",
-    answer: (
-      <>
-        No Brasil, existem principalmente quatro regimes tributários: Simples
-        Nacional, Lucro Presumido, Lucro Real e MEI (Microempreendedor
-        Individual). Cada um tem características específicas e é adequado para
-        diferentes tipos e portes de empresas. Nossa equipe realiza uma
-        análise detalhada do seu negócio para recomendar o regime mais
-        vantajoso.
-      </>
-    ),
-  },
-  {
-    question: "Como é feita a transição da minha contabilidade atual para a COMTATO?",
-    answer: (
-      <>
-        A transição é realizada de forma organizada e sem interrupções para seu
-        negócio. Iniciamos com uma reunião de alinhamento, seguida pela coleta
-        de documentos e informações da contabilidade anterior. Realizamos uma
-        análise da situação atual, regularizamos pendências se necessário, e
-        implementamos nossos processos.
-      </>
-    ),
-  },
-  {
-    question: "Quais documentos preciso enviar mensalmente para a contabilidade?",
-    answer: (
-      <>
-        Os principais documentos mensais incluem: extratos bancários, notas
-        fiscais de compra e venda, comprovantes de pagamentos e recebimentos,
-        folha de ponto dos funcionários e contratos firmados no período.
-      </>
-    ),
-  },
-  {
-    question: "A COMTATO atende empresas de todos os portes e segmentos?",
-    answer: (
-      <>
-        Sim, atendemos desde MEIs e pequenas empresas até grandes corporações,
-        com soluções personalizadas para cada porte e necessidade. Temos
-        especialistas em diversos segmentos como comércio, serviços, indústria,
-        tecnologia, saúde, construção civil e muitos outros, oferecendo
-        conhecimento específico para cada área de atuação.
-      </>
-    ),
-  },
-  {
-    question: "Como funciona a precificação dos serviços contábeis?",
-    answer: (
-      <>
-        Nossa precificação é transparente e baseada no porte da empresa, volume
-        de movimentações, regime tributário, número de funcionários e
-        complexidade das operações. Oferecemos pacotes personalizados que podem
-        incluir desde serviços básicos até soluções completas de consultoria.
-        Todos os serviços e valores são detalhados em contrato, sem surpresas
-        ou custos ocultos.
-      </>
-    ),
-  },
-  {
-    question: "É possível recuperar impostos pagos indevidamente?",
-    answer: (
-      <>
-        Sim, é possível recuperar impostos pagos indevidamente ou em excesso.
-        Realizamos uma análise detalhada dos últimos 5 anos fiscais da sua
-        empresa para identificar oportunidades de recuperação de créditos
-        tributários. Os valores recuperados podem ser restituídos ou
-        compensados com tributos futuros, gerando economia significativa para
-        seu negócio.
-      </>
-    ),
-  },
-];
+    {
+      question: "O que é Contabilidade Consultiva e sua Importância?",
+      answer: (
+        <>
+          A Contabilidade Consultiva é um modelo inovador de atuação contábil que
+          vai além da simples apuração de impostos e elaboração de
+          demonstrativos financeiros. Diferente da contabilidade tradicional, que
+          tem um foco maior no cumprimento das obrigações fiscais e contábeis, a
+          Contabilidade Consultiva busca oferecer uma assessoria estratégica e
+          personalizada para empresas e empreendedores.
+          <br />
+          <br />
+          Essa abordagem envolve o uso da contabilidade como uma ferramenta de
+          gestão, ajudando na tomada de decisões, na análise de indicadores
+          financeiros e na construção de estratégias para o crescimento
+          sustentável do negócio. O contador consultivo trabalha lado a lado com o
+          empresário, interpretando dados, identificando oportunidades e riscos e
+          propondo soluções que impactam positivamente a lucratividade e
+          eficiência da empresa.
+        </>
+      ),
+    },
+    {
+      question: "Principais Benefícios da Contabilidade Consultiva",
+      answer: (
+        <>
+          <strong>Tomada de Decisões Estratégicas</strong> – Com relatórios
+          personalizados e análises detalhadas, o gestor consegue ter uma visão
+          clara da saúde financeira da empresa e tomar decisões mais assertivas.
+          <br />
+          <strong>Redução de Custos e Aumento da Lucratividade</strong> – A
+          contabilidade consultiva auxilia na identificação de desperdícios e
+          oportunidades de otimização dos recursos, melhorando a rentabilidade do
+          negócio.
+          <br />
+          <strong>Planejamento Tributário Eficiente</strong> – Um contador
+          consultivo pode ajudar a empresa a pagar menos impostos dentro da
+          legalidade, evitando gastos desnecessários com tributos.
+          <br />
+          <strong>Maior Segurança e Conformidade</strong> – Além de atender às
+          exigências fiscais e contábeis, a consultoria contábil evita problemas
+          com o fisco, reduzindo riscos de autuações e penalidades.
+          <br />
+          <strong>Foco no Crescimento do Negócio</strong> – Com uma visão
+          estratégica e personalizada, a empresa consegue direcionar esforços
+          para o crescimento sustentável e a melhoria contínua.
+        </>
+      ),
+    },
+    {
+      question: "Por que investir em Contabilidade Consultiva?",
+      answer: (
+        <>
+          O mercado está cada vez mais dinâmico e competitivo, e ter um
+          profissional contábil que vai além da burocracia e atua como um
+          verdadeiro parceiro de negócios faz toda a diferença. A Contabilidade
+          Consultiva proporciona maior previsibilidade financeira, otimização de
+          resultados e segurança na gestão empresarial.
+          <br />
+          <br />
+          Empresas que adotam esse modelo contábil conseguem crescer com mais
+          solidez, tomar decisões embasadas e evitar surpresas financeiras.
+          Portanto, contar com uma contabilidade consultiva é um diferencial
+          estratégico para qualquer negócio que deseja se destacar no mercado.
+        </>
+      ),
+    },
+    {
+      question: "O que é Recuperação Tributária, Quem Pode Usufruir e as Vantagens?",
+      answer: (
+        <>
+          A recuperação tributária é um processo que permite a empresas e contribuintes recuperarem valores pagos indevidamente ou a maior em tributos. Isso ocorre porque, muitas vezes, por desconhecimento ou interpretação equivocada da legislação fiscal, empresas acabam pagando impostos que não deveriam ou recolhendo além do devido.
+          <br /><br />
+          <strong>Quem Pode Usufruir da Recuperação Tributária?</strong><br />
+          Qualquer empresa que recolhe tributos pode se beneficiar da recuperação tributária, desde que tenha pago valores indevidos. Isso inclui empresas de todos os portes e segmentos, independentemente do regime tributário adotado (Lucro Real, Lucro Presumido ou Simples Nacional).
+          <br />
+          Entre os tributos passíveis de revisão e recuperação, destacam-se:
+          <ul>
+            <li>PIS e COFINS sobre receitas não tributáveis;</li>
+            <li>ICMS pago a maior ou indevidamente;</li>
+            <li>INSS sobre verbas indenizatórias;</li>
+            <li>ISS e outros tributos municipais e estaduais.</li>
+          </ul>
+          <br />
+          <strong>Vantagens da Recuperação Tributária</strong>
+          <ul>
+            <li><strong>Recuperação de valores pagos indevidamente:</strong> Empresas podem reaver valores significativos que foram pagos a maior, melhorando seu fluxo de caixa e sua rentabilidade.</li>
+            <li><strong>Correção de erros fiscais:</strong> O processo de recuperação tributária também permite identificar e corrigir erros nos processos contábeis e fiscais da empresa, evitando futuras cobranças indevidas.</li>
+            <li><strong>Melhor planejamento tributário:</strong> Ao revisar tributos pagos, as empresas conseguem otimizar sua gestão fiscal e tributária, reduzindo custos e garantindo maior conformidade com a legislação.</li>
+            <li><strong>Possibilidade de compensar créditos:</strong> Os valores recuperados podem ser utilizados para abater impostos futuros, trazendo ainda mais benefícios financeiros.</li>
+          </ul>
+          <br />
+          <strong>Como Fazer a Recuperação Tributária?</strong><br />
+          Para realizar a recuperação tributária, é fundamental contar com especialistas na área fiscal e contábil. O processo envolve:
+          <ul>
+            <li>Análise detalhada das obrigações fiscais e pagamentos realizados;</li>
+            <li>Identificação de tributos pagos a maior ou indevidamente;</li>
+            <li>Solicitação de restituição ou compensação junto à Receita Federal ou órgãos competentes;</li>
+            <li>Implementação de melhorias no planejamento tributário para evitar novos pagamentos indevidos.</li>
+          </ul>
+          <br />
+          Investir na recuperação tributária pode ser uma estratégia inteligente para reduzir custos e aumentar a competitividade da empresa. Se você desconfia que sua empresa pode estar pagando tributos indevidos, contar com uma consultoria especializada é o melhor caminho para garantir conformidade e maximizar seus resultados financeiros.
+        </>
+      ),
+    },
+    {
+      question: "Quais são os regimes tributários disponíveis para minha empresa?",
+      answer: (
+        <>
+          No Brasil, existem principalmente quatro regimes tributários: Simples
+          Nacional, Lucro Presumido, Lucro Real e MEI (Microempreendedor
+          Individual). Cada um tem características específicas e é adequado para
+          diferentes tipos e portes de empresas. Nossa equipe realiza uma
+          análise detalhada do seu negócio para recomendar o regime mais
+          vantajoso.
+        </>
+      ),
+    },
+    {
+      question: "Como é feita a transição da minha contabilidade atual para a COMTATO?",
+      answer: (
+        <>
+          A transição é realizada de forma organizada e sem interrupções para seu
+          negócio. Iniciamos com uma reunião de alinhamento, seguida pela coleta
+          de documentos e informações da contabilidade anterior. Realizamos uma
+          análise da situação atual, regularizamos pendências se necessário, e
+          implementamos nossos processos.
+        </>
+      ),
+    },
+    {
+      question: "Quais documentos preciso enviar mensalmente para a contabilidade?",
+      answer: (
+        <>
+          Os principais documentos mensais incluem: extratos bancários, notas
+          fiscais de compra e venda, comprovantes de pagamentos e recebimentos,
+          folha de ponto dos funcionários e contratos firmados no período.
+        </>
+      ),
+    },
+    {
+      question: "A COMTATO atende empresas de todos os portes e segmentos?",
+      answer: (
+        <>
+          Sim, atendemos desde MEIs e pequenas empresas até grandes corporações,
+          com soluções personalizadas para cada porte e necessidade. Temos
+          especialistas em diversos segmentos como comércio, serviços, indústria,
+          tecnologia, saúde, construção civil e muitos outros, oferecendo
+          conhecimento específico para cada área de atuação.
+        </>
+      ),
+    },
+    {
+      question: "Como funciona a precificação dos serviços contábeis?",
+      answer: (
+        <>
+          Nossa precificação é transparente e baseada no porte da empresa, volume
+          de movimentações, regime tributário, número de funcionários e
+          complexidade das operações. Oferecemos pacotes personalizados que podem
+          incluir desde serviços básicos até soluções completas de consultoria.
+          Todos os serviços e valores são detalhados em contrato, sem surpresas
+          ou custos ocultos.
+        </>
+      ),
+    },
+    {
+      question: "É possível recuperar impostos pagos indevidamente?",
+      answer: (
+        <>
+          Sim, é possível recuperar impostos pagos indevidamente ou em excesso.
+          Realizamos uma análise detalhada dos últimos 5 anos fiscais da sua
+          empresa para identificar oportunidades de recuperação de créditos
+          tributários. Os valores recuperados podem ser restituídos ou
+          compensados com tributos futuros, gerando economia significativa para
+          seu negócio.
+        </>
+      ),
+    },
+  ];
+
+  const handleSaibaMaisClick = (serviceTitle: string) => {
+    const whatsappNumber = "5561996333545"; // Insira o número do WhatsApp aqui
+    const message = `Olá! Tenho dúvida sobre o serviço de ${serviceTitle}.`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
+  const handleSolicitarPropostaClick = () => {
+    const whatsappNumber = "5561996333545";
+    const message = "Olá! Gostaria de solicitar uma proposta de serviços.";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -492,7 +547,7 @@ export function ServicesPage() {
               <Button
                 size="lg"
                 className="bg-pink-500 hover:bg-pink-600 text-white"
-                onClick={() => window.open('https://wa.me/5561996333545', '_blank')}
+                onClick={handleSolicitarPropostaClick}
               >
                 Solicitar Proposta
               </Button>
@@ -500,6 +555,12 @@ export function ServicesPage() {
                 size="lg"
                 variant="outline"
                 className="border-pink-200 hover:bg-pink-50"
+                onClick={() => {
+                  const element = document.getElementById("additional-services");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 Ver Todos os Serviços
               </Button>
@@ -534,12 +595,13 @@ export function ServicesPage() {
                   <p className="text-muted-foreground mb-4">
                     {service.shortDescription}
                   </p>
-                  <Link
-                    className="inline-flex items-center text-pink-500 font-medium group-hover:underline"
-                    to={""}
+                  <Button
+                    variant="link"
+                    className="inline-flex items-center text-pink-500 font-medium group-hover:underline p-0"
+                    onClick={() => handleSaibaMaisClick(service.title)}
                   >
                     Saiba mais <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
+                  </Button>
                 </div>
               ))}
             </div>
@@ -581,17 +643,9 @@ export function ServicesPage() {
                   value={service.id}
                   id={service.id}
                 >
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                      <img
-                        src={service.image || "/placeholder.svg"}
-                        alt={service.title}
-                        width={600}
-                        height={400}
-                        className="rounded-xl shadow-lg"
-                      />
-                    </div>
-                    <div className="space-y-6">
+                  <div className="grid md:grid-cols-5 gap-12 items-start">
+                    {/* Left Column for Description */}
+                    <div className="md:col-span-3 space-y-6">
                       <div className="flex items-center gap-3">
                         {service.icon}
                         <h3 className="text-2xl font-bold">{service.title}</h3>
@@ -599,22 +653,29 @@ export function ServicesPage() {
                       <p className="text-muted-foreground">
                         {service.fullDescription}
                       </p>
-                      <div className="space-y-4">
-                        <h4 className="font-semibold">
-                          O que incluímos neste serviço:
-                        </h4>
-                        <div className="space-y-2">
-                          {service.features.map((feature, idx) => (
-                            <div key={idx} className="flex items-start gap-2">
-                              <CheckCircle className="h-5 w-5 text-pink-500 mt-0.5 flex-shrink-0" />
-                              <span>{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <Button className="bg-pink-500 hover:bg-pink-600 text-white mt-4" onClick={() => window.open('https://wa.me/5561996333545', '_blank')}>
+                      <Button
+                        className="bg-pink-500 hover:bg-pink-600 text-white mt-4"
+                        onClick={() =>
+                          handleSaibaMaisClick(service.title)
+                        }
+                      >
                         Solicitar Proposta
                       </Button>
+                    </div>
+
+                    {/* Right Column for Features */}
+                    <div className="md:col-span-2 bg-pink-50 p-6 rounded-xl border border-pink-100">
+                      <h4 className="font-semibold text-lg mb-4">
+                        O que incluímos neste serviço:
+                      </h4>
+                      <div className="space-y-3">
+                        {service.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <CheckCircle className="h-5 w-5 text-pink-500 mt-1 flex-shrink-0" />
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </TabsContent>
@@ -624,7 +685,7 @@ export function ServicesPage() {
         </section>
 
         {/* Additional Services Section */}
-        <section className="py-16 bg-white">
+        <section id="additional-services" className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-600 font-medium mb-4">
@@ -671,6 +732,7 @@ export function ServicesPage() {
                     <Button
                       variant="outline"
                       className="w-full border-pink-200 hover:bg-pink-50 text-pink-500"
+                      onClick={() => handleSaibaMaisClick(service.title)}
                     >
                       Saiba Mais
                     </Button>
