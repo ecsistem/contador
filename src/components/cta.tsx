@@ -2,10 +2,13 @@ import { Button } from "./ui/button";
 
 export function Cta() {
     const handleAgendarConsultaClick = () => {
-        window.open('https://wa.me/5561996333545', '_blank');
+        const whatsappNumber = "5561996333545";
+        const message = "Olá! Vim pelo site e gostaria de agendar uma consulta gratuita.";
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
     };
 
-    return ( 
+    return (
         <section className="py-20 bg-pink-500 text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
