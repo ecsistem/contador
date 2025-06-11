@@ -264,8 +264,8 @@ Estado: ${formData.businessState}
       // Format message for WhatsApp
       const message = encodeURIComponent(formatWhatsAppMessage())
 
-      // WhatsApp phone number - replace with your actual business number
-      const phoneNumber = "5511999999999" // Example: 5511999999999
+      // WhatsApp phone number
+      const phoneNumber = "5561996333545"
 
       // Create WhatsApp URL
       const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`
@@ -538,11 +538,11 @@ Estado: ${formData.businessState}
                   <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div>
                       <img
-                        src={`/placeholder.svg?height=400&width=600&text=${type.title}`}
+                        src={`/images/${type.id}.webp`}
                         alt={type.title}
                         width={600}
                         height={400}
-                        className="rounded-xl shadow-lg"
+                        className=""
                       />
                     </div>
                     <div className="space-y-6">
@@ -1126,7 +1126,12 @@ Estado: ${formData.businessState}
 
               <div className="mt-8 text-center">
                 <p className="text-muted-foreground mb-4">Não encontrou o que procurava? Entre em contato conosco.</p>
-                <Button className="bg-pink-500 hover:bg-pink-600 text-white">Fale com um Especialista</Button>
+                <Button 
+                  className="bg-pink-500 hover:bg-pink-600 text-white"
+                  onClick={() => window.open('https://wa.me/5561996333545', '_blank')}
+                >
+                  Fale com um Especialista
+                </Button>
               </div>
             </div>
           </div>
@@ -1135,4 +1140,3 @@ Estado: ${formData.businessState}
     </div>
   )
 }
-
