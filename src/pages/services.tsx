@@ -492,6 +492,7 @@ export function ServicesPage() {
               <Button
                 size="lg"
                 className="bg-pink-500 hover:bg-pink-600 text-white"
+                onClick={() => window.open('https://wa.me/5561996333545', '_blank')}
               >
                 Solicitar Proposta
               </Button>
@@ -617,7 +618,7 @@ export function ServicesPage() {
                           ))}
                         </div>
                       </div>
-                      <Button className="bg-pink-500 hover:bg-pink-600 text-white mt-4">
+                      <Button className="bg-pink-500 hover:bg-pink-600 text-white mt-4" onClick={() => window.open('https://wa.me/5561996333545', '_blank')}>
                         Solicitar Proposta
                       </Button>
                     </div>
@@ -781,7 +782,7 @@ export function ServicesPage() {
                 <p className="text-muted-foreground mb-4">
                   Não encontrou o que procurava? Entre em contato conosco.
                 </p>
-                <Button className="bg-pink-500 hover:bg-pink-600 text-white">
+                <Button className="bg-pink-500 hover:bg-pink-600 text-white" onClick={() => window.open('https://wa.me/5561996333545', '_blank')}>
                   Fale com um Especialista
                 </Button>
               </div>

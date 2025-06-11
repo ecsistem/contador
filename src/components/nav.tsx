@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 
 export function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +13,10 @@ export function Nav() {
     { to: "/abrir-empresa", label: "Abrir empresa" },
     { to: "/contatos", label: "Contatos" },
   ];
+
+  const handleAgendarConsultaClick = () => {
+    window.open('https://wa.me/5561996333545', '_blank');
+  };
 
   return (
     <div className="flex justify-center w-full pt-6">
@@ -54,7 +58,10 @@ export function Nav() {
                 {link.label}
               </NavLink>
             ))}
-            <Button className="bg-pink-500 text-white hover:bg-pink-600 shadow-md transition-all duration-300 hover:shadow-lg rounded-full px-6">
+            <Button 
+              onClick={handleAgendarConsultaClick}
+              className="bg-pink-500 text-white hover:bg-pink-600 shadow-md transition-all duration-300 hover:shadow-lg rounded-full px-6"
+            >
               Agendar Consulta
             </Button>
           </div>
@@ -70,16 +77,19 @@ export function Nav() {
                   className="text-gray-700 hover:text-gray-900 hover:bg-white/50 font-medium"
                   to={link.to}
                   end
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
                 </NavLink>
               ))}
-              <NavLink
+              <a
                 className="bg-pink-500 text-white hover:bg-pink-600 w-full shadow-md transition-all duration-300 hover:shadow-lg rounded-full text-center py-2"
-                to="/agendar-consulta"
+                href="https://wa.me/5561996333545"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Agendar Consulta
-              </NavLink>
+              </a>
             </div>
           </div>
         )}
