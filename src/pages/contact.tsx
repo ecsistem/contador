@@ -239,7 +239,7 @@ export function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
                   <p className="text-muted-foreground mb-4">Envie uma mensagem e receba uma resposta rápida.</p>
-                  <Button onClick={handleWhatsAppClick} className="w-full bg-green-500 hover:bg-green-600 text-white">Iniciar Conversa</Button>
+                  <Button onClick={handleWhatsAppClick} className="w-full bg-pink-500 hover:bg-pink-600 text-white">Iniciar Conversa</Button>
                 </CardContent>
               </Card>
 

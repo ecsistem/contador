@@ -219,11 +219,7 @@ export function AboutUs() {
         ))}
       </div>
     </div>
-
-    <div className="text-center mt-12">
-      <Button className="bg-pink-500 hover:bg-pink-600 text-white" onClick={handleConhecaEquipeClick}>Conheça Toda a Equipe</Button>
-    </div>
-  </div>
+  </div>s
 </section>
 
         {/* Timeline Section */}
